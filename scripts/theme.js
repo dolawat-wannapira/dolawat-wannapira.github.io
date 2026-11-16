@@ -54,6 +54,8 @@ const span = (start, end, present) => `${date(start)} – ${end ? date(end) : pr
 const displayUrl = (url) => url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
 const slug = (text) => text.toLowerCase().replace(/[^a-z0-9฀-๿]+/g, '-').replace(/^-|-$/g, '')
 
+// "A · B · C" as separate spans, so a wrapped line never ends or starts on a "·" (see .seq).
+const seq = (list) => `<span class="seq">${list.split(' · ').map((s) => `<span>${escape(s)}</span>`).join(' ')}</span>`
 const dashList = (items = []) => (items.length ? `<ul class="dash">${items.map((item) => `<li>${escape(item)}</li>`).join('')}</ul>` : '')
 const printed = (entry) => (entry.highlights ?? []).filter((_, i) => !(entry['x-print-skip'] ?? []).includes(i + 1))
 
@@ -81,6 +83,104 @@ function groupWork(work = []) {
 
 const projectLane = (type = '') => (/freelance|ฟรีแลนซ์/i.test(type) ? 'freelance' : /open|โอเพน/i.test(type) ? 'openSource' : 'personal')
 
+// The fact strip under the name, shared by the page and the share card. The role is already the line
+// above, so the strip carries what a recruiter filters on instead.
+function heroFacts({ basics, work = [] }, labels) {
+  const current = groupWork(work).find((g) => !g.end)
+  return [
+    // The country in the page's language, as print has it, rather than the ISO code.
+    [labels.basedIn, [basics.location?.city, basics.location && labels.country].filter(Boolean).join(', ')],
+    [labels.since, work.map((w) => w.startDate).sort()[0]?.slice(0, 4)],
+    [labels.nowAt, current?.name],
+    [labels.stack, basics['x-stack']],
+  ].filter(([, v]) => v)
+}
+
+const pageTitle = ({ basics }, { lang, labels }) => `${basics.name} – ${basics.label}${lang === 'en' ? '' : ` · ${labels.eyebrow}`}`
+
+// What a link preview (Discord, Slack, LINE, LinkedIn, X) and a search engine read: Open Graph and
+// Twitter tags pointing at the share card the build renders with card() below, plus schema.org Person
+// data. Link previews need absolute URLs, so they are built from basics.url and the page's folder.
+function share(resume, { lang, labels, pageUrl, cardName = 'og.png' }) {
+  if (!pageUrl) return ''
+  const { basics } = resume
+  const image = new URL(cardName, pageUrl).href
+  const person = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: basics.name,
+    jobTitle: basics.label,
+    url: pageUrl,
+    image,
+    email: `mailto:${basics.email}`,
+    address: basics.location && { '@type': 'PostalAddress', addressLocality: basics.location.city, addressCountry: basics.location.countryCode },
+    sameAs: (basics.profiles ?? []).map((p) => p.url),
+  }
+  return [
+    `<link rel="canonical" href="${escape(pageUrl)}">`,
+    ...[
+      ['og:type', 'profile'],
+      ['og:site_name', basics.name],
+      ['og:title', pageTitle(resume, { lang, labels })],
+      ['og:description', labels.description],
+      ['og:url', pageUrl],
+      ['og:locale', lang === 'th' ? 'th_TH' : 'en_US'],
+      ['og:image', image],
+      ['og:image:type', 'image/png'],
+      ['og:image:width', '1200'],
+      ['og:image:height', '630'],
+      ['og:image:alt', `${basics.name}, ${basics.label}`],
+      ['profile:first_name', basics.name.split(' ')[0]],
+      ['profile:last_name', basics.name.split(' ').slice(1).join(' ')],
+    ].map(([k, v]) => `<meta property="${k}" content="${escape(v)}">`),
+    `<meta name="twitter:card" content="summary_large_image">`,
+    // JSON in a script element: only "</" could end it early.
+    `<script type="application/ld+json">${JSON.stringify(person).replace(/<\//g, '<\\/')}</script>`,
+  ].join('\n')
+}
+
+// The share card: a 1200×630 page the build screenshots into og.png, the header of the screen
+// layout (eyebrow, name, role, fact strip) set at a size that still reads as a small chat preview.
+export function card(resume, { lang, labels, fontPath = 'fonts' }) {
+  const { basics } = resume
+  const facts = heroFacts(resume, labels)
+  return `<!doctype html>
+<html lang="${lang}">
+<head>
+<meta charset="utf-8">
+<style>${fontFaces(fontPath)}
+html,body{width:1200px;height:630px;overflow:hidden}
+body{display:flex;flex-direction:column;padding:56px 72px 60px;background:var(--paper)}
+.top{display:flex;align-items:center;justify-content:space-between}
+.mark{display:flex;align-items:center;gap:18px;font-size:20px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+:lang(th) .mark{letter-spacing:.02em}
+.mark svg{width:52px;height:52px}
+.url{font-size:22px;font-weight:600;color:var(--ink-2)}
+h1{margin-top:auto;font-size:118px;font-weight:800;line-height:.88;letter-spacing:-.035em}
+.label{margin-top:22px;font-size:38px;font-weight:500;color:var(--accent)}
+dl{display:grid;grid-template-columns:repeat(${facts.length},minmax(0,1fr));margin-top:40px;border-top:2px solid var(--ink)}
+dl div{padding:18px 20px 0 0;min-width:0}
+dl div+div{padding-left:20px;border-left:1px solid var(--line)}
+dt{font-size:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+:lang(th) dt{font-size:18px;letter-spacing:.02em}
+dd{margin-top:6px;font-size:28px;font-weight:600;line-height:1.25}
+.seq{display:flex;flex-wrap:wrap;column-gap:.85em;overflow:hidden}
+.seq>span{position:relative}
+.seq>span::before{content:"·";position:absolute;right:calc(100% + .3em)}
+</style>
+</head>
+<body>
+<div class="top"><p class="mark">${favicon}${escape(labels.eyebrow)}</p><p class="url">${escape(displayUrl(basics.url ?? ''))}</p></div>
+<h1>${basics.name.split(' ').map(escape).join('<br>')}</h1>
+<p class="label">${escape(basics.label)}</p>
+<dl>${facts.map(([k, v]) => `<div><dt>${escape(k)}</dt><dd>${k === labels.stack ? seq(v) : escape(v)}</dd></div>`).join('')}</dl>
+</body>
+</html>`
+}
+
+// The </DW> mark from assets/favicon.svg.
+const favicon = `<svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#2f54eb"/><g transform="translate(32 32) scale(.8) translate(-35.5 -32)" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 24 4 32l6 8"/><path d="M17 41 22 23"/><path d="M28 24h2a6.5 8 0 0 1 0 16h-2z"/><path d="m43 24 3 16 3-10 3 10 3-16"/><path d="m61 24 6 8-6 8"/></g></svg>`
+
 export function render(resume, options) {
   const { lang, labels } = options
   return `<!doctype html>
@@ -88,9 +188,10 @@ export function render(resume, options) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${escape(resume.basics.name)} – ${escape(resume.basics.label)}${lang === 'en' ? '' : ` · ${escape(labels.eyebrow)}`}</title>
+<title>${escape(pageTitle(resume, options))}</title>
 <meta name="description" content="${escape(labels.description)}">
 ${lang === 'th' ? '<meta name="robots" content="noindex, nofollow">' : ''}
+${share(resume, options)}
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 ${preloads(lang, options.fontPath ?? 'fonts')}
@@ -110,20 +211,9 @@ function screen(resume, { lang, labels, pdfName, now, languages: switcher = [] }
   const { basics, work = [], projects = [], skills = [], education = [], languages = [] } = resume
   const groups = groupWork(work)
   const firstYear = work.map((w) => w.startDate).sort()[0].slice(0, 4)
-  const current = groups.find((g) => !g.end)
-  // The role is already the line above, so the strip carries what a recruiter filters on instead.
-  const facts = [
-    // The country in the page's language, as print has it, rather than the ISO code.
-    [labels.basedIn, [basics.location?.city, basics.location && labels.country].filter(Boolean).join(', ')],
-    [labels.since, firstYear],
-    [labels.nowAt, current?.name],
-    [labels.stack, basics['x-stack']],
-  ]
-    .filter(([, v]) => v)
-    .map(([k, v]) => [k, escape(v)])
-  // The stack's items are separate spans, so a wrapped line never ends or starts on a "·" (see .seq).
+  const facts = heroFacts(resume, labels).map(([k, v]) => [k, escape(v)])
   const stack = facts.find(([k]) => k === labels.stack)
-  if (stack) stack[1] = `<span class="seq">${basics['x-stack'].split(' · ').map((s) => `<span>${escape(s)}</span>`).join(' ')}</span>`
+  if (stack) stack[1] = seq(basics['x-stack'])
   // The location sits in the fact strip, so the contact list holds only the ways to get in touch.
   const contacts = [
     { icon: 'mail', label: labels.email, text: basics.email, href: `mailto:${basics.email}` },

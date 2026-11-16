@@ -1,11 +1,12 @@
 // Builds the site into site/: the English resume at the root and the Thai one in site/th/, each
-// with its page, PDF, resume.json, favicon and fonts. The page comes from scripts/theme.js; the PDF
-// is Chrome printing that same page (its print layout is the classic CV), so both always match.
-import { copyFileSync, cpSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+// with its page, PDF, share card (og.png), resume.json, favicon and fonts. The page comes from
+// scripts/theme.js; the PDF is Chrome printing that same page (its print layout is the classic CV),
+// so both always match.
+import { copyFileSync, cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import puppeteer from 'puppeteer'
-import { render } from './theme.js'
+import { card, render } from './theme.js'
 
 const OUT = 'site'
 
@@ -13,6 +14,7 @@ const versions = [
   {
     file: 'resume.json',
     dir: OUT,
+    path: '',
     lang: 'en',
     pdfSuffix: '',
     labels: {
@@ -46,6 +48,7 @@ const versions = [
   {
     file: 'resume.th.json',
     dir: `${OUT}/th`,
+    path: 'th/',
     lang: 'th',
     pdfSuffix: '-TH',
     labels: {
@@ -89,15 +92,18 @@ try {
   await browser?.close()
 }
 
-async function buildVersion({ file, dir, lang, pdfSuffix, labels }) {
+async function buildVersion({ file, dir, path, lang, pdfSuffix, labels }) {
   const resume = JSON.parse(readFileSync(file, 'utf8'))
   const pdfName = `${resume.basics.name.replace(/\s+/g, '-')}-CV${pdfSuffix}.pdf`
-  const description = `${resume.basics.name}, ${resume.basics.label}. ${resume.basics.summary.split(/(?<=\.)\s/)[0]}`
+  // The title already carries the name and role, so the description is the intro's first two
+  // sentences (the Thai one has no full stops, so it keeps the whole intro).
+  const description = (resume.basics['x-lede'] ?? resume.basics.summary).split(/(?<=\.)\s/).slice(0, 2).join(' ')
+  const pageUrl = new URL(path, `${resume.basics.url.replace(/\/$/, '')}/`).href
 
   mkdirSync(dir, { recursive: true })
   // "now" ends the ongoing bars on the timeline; CI rebuilds on every push.
   const now = new Date().toISOString().slice(0, 7)
-  writeFileSync(`${dir}/index.html`, render(resume, { lang, pdfName, now, languages: switcher[lang], labels: { ...labels, description } }))
+  writeFileSync(`${dir}/index.html`, render(resume, { lang, pdfName, now, pageUrl, languages: switcher[lang], labels: { ...labels, description } }))
   copyFileSync(file, `${dir}/resume.json`)
   for (const icon of ['favicon.svg', 'apple-touch-icon.png']) copyFileSync(`assets/${icon}`, `${dir}/${icon}`)
   cpSync('assets/fonts', `${dir}/fonts`, { recursive: true })
@@ -111,6 +117,14 @@ async function buildVersion({ file, dir, lang, pdfSuffix, labels }) {
     await page.goto(pathToFileURL(resolve(dir, 'index.html')).href, { waitUntil: 'networkidle0' })
     await page.evaluate(() => document.fonts.ready)
     await page.pdf({ path: `${dir}/${pdfName}`, preferCSSPageSize: true, printBackground: true })
+
+    // The share card is a page of its own, screenshotted and then removed.
+    writeFileSync(`${dir}/og.html`, card(resume, { lang, labels }))
+    await page.setViewport({ width: 1200, height: 630 })
+    await page.goto(pathToFileURL(resolve(dir, 'og.html')).href, { waitUntil: 'networkidle0' })
+    await page.evaluate(() => document.fonts.ready)
+    await page.screenshot({ path: `${dir}/og.png` })
+    rmSync(`${dir}/og.html`)
     await page.close()
   }
   console.log(`Built ${dir}/`)
