@@ -3,9 +3,11 @@
   "basics": {
     "name": "Dolawat Wannapira",
     "label": "Front-End Engineer",
+    "x-stack": "React · Vue · TypeScript",
     "email": "dolawat.wannapira@gmail.com",
     "url": "https://dolawat-wannapira.github.io",
     "summary": "Front-end engineer building production web apps since 2018. At BUZZWOO! since 2020 I build and maintain the frontends of SaaS platforms and client products in React, Vue and Angular on Laravel back ends, including most of the React/TypeScript frontend of a five-product compliance SaaS and almost all of the Vue 3 frontend of an SEO agency's operations platform. I add the tests, build-tool moves and upgrades that keep those frontends maintainable. Outside work I built and run Counter Pressing, a live Thai football community on SvelteKit, solo with an AI-assisted Claude Code workflow, and take freelance builds. Earlier, at Wolves Corporation, I worked on client web apps for clinics, logistics companies and online shops.",
+    "x-lede": "Front-end engineer building production web apps since 2018. At BUZZWOO! since 2020 I built most of the React/TypeScript frontend of a five-product compliance SaaS and almost all of the Vue 3 frontend of an SEO agency's operations platform. Outside work I built and run Counter Pressing, a live Thai football community, solo.",
     "location": {
       "city": "Chiang Mai",
       "countryCode": "TH"
@@ -41,7 +43,9 @@
         "TypeScript",
         "MUI",
         "Inertia"
-      ]
+      ],
+      "x-short": "Compliance",
+      "x-headline": "About three quarters of frontend commits · added 296 of 323 test files"
     },
     {
       "name": "BUZZWOO!",
@@ -60,7 +64,9 @@
         "Vuetify",
         "Tailwind",
         "Inertia"
-      ]
+      ],
+      "x-short": "SEO Agency",
+      "x-headline": "About 83% of frontend commits · moved the build to Vite"
     },
     {
       "name": "BUZZWOO!",
@@ -75,12 +81,17 @@
         "Built the printable report page that the backend turns into a PDF, plus Chart.js dashboards, analytics events and cookie consent.",
         "Migrated the build from Laravel Mix to Vite and added most of the Cypress end-to-end specs."
       ],
+      "x-print-skip": [
+        4
+      ],
       "keywords": [
         "Vue 3",
         "Pinia",
         "Tailwind",
         "Storybook"
-      ]
+      ],
+      "x-short": "Retail Partner",
+      "x-headline": "About 70% of first-year frontend commits · shared Storybook component set"
     },
     {
       "name": "BUZZWOO!",
@@ -95,11 +106,16 @@
         "Shipped YouTube export settings, link-only private episodes, admin impersonation and a cookie consent that loads tag management only after opt-in.",
         "Built the public podcast blog pages and restyled the transactional and monthly analytics emails in Laravel Blade."
       ],
+      "x-print-skip": [
+        4
+      ],
       "keywords": [
         "Angular",
         "NgRx",
         "wavesurfer.js"
-      ]
+      ],
+      "x-short": "Podcast",
+      "x-headline": "Only front-end developer from April 2021 · in-browser audio editor"
     },
     {
       "name": "BUZZWOO!",
@@ -117,7 +133,9 @@
         "Angular",
         "NgRx",
         "Angular Material"
-      ]
+      ],
+      "x-short": "Accident Damage-Claim",
+      "x-headline": "Ran the frontend on my own in 2022 · claim wizard and accounting tab"
     },
     {
       "name": "BUZZWOO!",
@@ -135,7 +153,9 @@
         "React 19",
         "Vite",
         "Shadow DOM"
-      ]
+      ],
+      "x-short": "AI Chat Widget",
+      "x-headline": "About 79% of commits · one script tag, isolated in a Shadow DOM"
     },
     {
       "name": "BUZZWOO!",
@@ -153,7 +173,9 @@
         "Nuxt 2",
         "TypeScript",
         "Vuetify"
-      ]
+      ],
+      "x-short": "Massage Booking",
+      "x-headline": "SMS campaign composer, supply-and-demand map and booking tables"
     },
     {
       "name": "BUZZWOO!",
@@ -168,12 +190,16 @@
         "Eye-focus test prototype (Nuxt, TypeScript): built a mobile web app on my own in about two weeks that uses the phone's motion sensors to time how fast the eyes refocus between near and far.",
         "WordPress: maintained the agency's own website for three years (ACF/Gutenberg blocks, a careers slider, layout-shift fixes) and styled sections for client WooCommerce shops."
       ],
+      "x-print-skip": [
+        4
+      ],
       "keywords": [
         "Nuxt",
         "Drupal",
         "WordPress"
       ],
-      "x-timeline": false
+      "x-timeline": false,
+      "x-headline": "Campaign microsite, a 26-component Drupal design system and WordPress"
     },
     {
       "name": "Wolves Corporation",
@@ -188,10 +214,14 @@
         "Worked on online shops with product management, payments, seller and buyer data and cargo tracking.",
         "Worked on a school website and an internal task-management and time-tracking app."
       ],
+      "x-print-skip": [
+        4
+      ],
       "keywords": [
         "PHP",
         "jQuery"
-      ]
+      ],
+      "x-headline": "Clinic, logistics and shop apps on an in-house PHP framework"
     }
   ],
   "projects": [
@@ -217,7 +247,9 @@
         "Socket.io",
         "Stripe",
         "Claude Code"
-      ]
+      ],
+      "x-short": "Counter Pressing",
+      "x-headline": "Designed, built and run solo · in production about 11 weeks after the first commit"
     },
     {
       "name": "Creator-Video Marketplace",
@@ -239,7 +271,9 @@
         "Stripe",
         "Tailwind",
         "shadcn/ui"
-      ]
+      ],
+      "x-short": "Creator-Video Marketplace",
+      "x-headline": "Built solo in about five weeks · Stripe escrow and a video pipeline"
     },
     {
       "name": "Lifestyle Content PWA for a Life Insurer",
@@ -257,7 +291,9 @@
         "SWR",
         "PWA",
         "SCSS"
-      ]
+      ],
+      "x-short": "Lifestyle Content PWA",
+      "x-headline": "Top committer of the 2021 build in a team of five developers"
     },
     {
       "name": "Law-Draft Tracker",
@@ -274,7 +310,9 @@
         "Vue",
         "TypeScript",
         "Tailwind"
-      ]
+      ],
+      "x-short": "Law-Draft Tracker",
+      "x-headline": "9 merged pull requests as a volunteer"
     }
   ],
   "skills": [
@@ -335,7 +373,7 @@
       ]
     },
     {
-      "name": "Side projects",
+      "name": "Back end and data",
       "keywords": [
         "PostgreSQL",
         "Prisma",

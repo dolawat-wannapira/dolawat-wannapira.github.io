@@ -3,9 +3,11 @@
   "basics": {
     "name": "Dolawat Wannapira",
     "label": "Front-End Engineer",
+    "x-stack": "React · Vue · TypeScript",
     "email": "dolawat.wannapira@gmail.com",
     "url": "https://dolawat-wannapira.github.io",
     "summary": "Front-end engineer ที่พัฒนาเว็บแอปบน production มาตั้งแต่ปี 2018 ปัจจุบันทำงานที่ BUZZWOO! ตั้งแต่ปี 2020 สร้างและดูแล frontend ของแพลตฟอร์ม SaaS และผลิตภัณฑ์ของลูกค้าด้วย React, Vue และ Angular บน backend ที่เป็น Laravel ผลงานหลักคือ frontend ส่วนใหญ่ด้วย React/TypeScript ของแพลตฟอร์ม SaaS ด้าน compliance ที่มี 5 ผลิตภัณฑ์ และ frontend เกือบทั้งหมดด้วย Vue 3 ของแพลตฟอร์มบริหารงานของเอเจนซี SEO รวมถึงเพิ่ม test ย้าย build tool และอัปเกรด library เพื่อให้ frontend เหล่านี้ดูแลต่อได้ง่าย นอกเวลางานสร้างและดูแล Counter Pressing ซึ่งเป็นคอมมูนิตีฟุตบอลไทยบน SvelteKit ที่ใช้งานจริง โดยทำคนเดียวด้วย workflow แบบ AI-assisted (Claude Code) และรับงาน freelance ก่อนหน้านี้ที่ Wolves Corporation ทำงานในเว็บแอปของลูกค้าทั้งด้านคลินิก โลจิสติกส์ และร้านค้าออนไลน์",
+    "x-lede": "Front-end engineer ที่พัฒนาเว็บแอปบน production มาตั้งแต่ปี 2018 ที่ BUZZWOO! ตั้งแต่ปี 2020 สร้าง frontend ส่วนใหญ่ด้วย React/TypeScript ของแพลตฟอร์ม SaaS ด้าน compliance ที่มี 5 ผลิตภัณฑ์ และ frontend เกือบทั้งหมดด้วย Vue 3 ของแพลตฟอร์มบริหารงานของเอเจนซี SEO นอกเวลางานสร้างและดูแล Counter Pressing คอมมูนิตีฟุตบอลไทยที่ใช้งานจริง โดยทำคนเดียว",
     "location": {
       "city": "เชียงใหม่",
       "countryCode": "TH"
@@ -41,7 +43,9 @@
         "TypeScript",
         "MUI",
         "Inertia"
-      ]
+      ],
+      "x-short": "Compliance",
+      "x-headline": "เขียนประมาณสามในสี่ของ commit ฝั่ง frontend · เพิ่ม test file 296 จาก 323 ไฟล์"
     },
     {
       "name": "BUZZWOO!",
@@ -60,7 +64,9 @@
         "Vuetify",
         "Tailwind",
         "Inertia"
-      ]
+      ],
+      "x-short": "เอเจนซี SEO",
+      "x-headline": "เขียนประมาณ 83% ของ commit ฝั่ง frontend · ย้าย build ไปใช้ Vite"
     },
     {
       "name": "BUZZWOO!",
@@ -75,12 +81,17 @@
         "สร้างหน้ารายงานสำหรับพิมพ์ที่ backend แปลงเป็น PDF รวมถึงแดชบอร์ดด้วย Chart.js, analytics event และ cookie consent",
         "ย้าย build จาก Laravel Mix ไปใช้ Vite และเพิ่ม Cypress end-to-end spec ส่วนใหญ่"
       ],
+      "x-print-skip": [
+        4
+      ],
       "keywords": [
         "Vue 3",
         "Pinia",
         "Tailwind",
         "Storybook"
-      ]
+      ],
+      "x-short": "ร้านค้าพาร์ทเนอร์",
+      "x-headline": "เขียนประมาณ 70% ของ commit ฝั่ง frontend ในปีแรก · ชุด component กลางพร้อม Storybook"
     },
     {
       "name": "BUZZWOO!",
@@ -95,11 +106,16 @@
         "ทำการตั้งค่า export ไป YouTube, ตอนแบบส่วนตัวที่เข้าได้ผ่านลิงก์, การสวมสิทธิ์ผู้ใช้สำหรับ admin และ cookie consent ที่โหลด tag management หลังผู้ใช้ยินยอมเท่านั้น",
         "สร้างหน้า blog ของพอดแคสต์สาธารณะ และปรับดีไซน์อีเมลแจ้งเตือนกับอีเมลสรุป analytics รายเดือนด้วย Laravel Blade"
       ],
+      "x-print-skip": [
+        4
+      ],
       "keywords": [
         "Angular",
         "NgRx",
         "wavesurfer.js"
-      ]
+      ],
+      "x-short": "พอดแคสต์",
+      "x-headline": "front-end developer คนเดียวตั้งแต่เมษายน 2021 · audio editor บนเบราว์เซอร์"
     },
     {
       "name": "BUZZWOO!",
@@ -117,7 +133,9 @@
         "Angular",
         "NgRx",
         "Angular Material"
-      ]
+      ],
+      "x-short": "เคลมอุบัติเหตุ",
+      "x-headline": "ดูแล frontend คนเดียวในปี 2022 · ฟอร์มแจ้งเคลมและแท็บบัญชี"
     },
     {
       "name": "BUZZWOO!",
@@ -135,7 +153,9 @@
         "React 19",
         "Vite",
         "Shadow DOM"
-      ]
+      ],
+      "x-short": "Widget แชท AI",
+      "x-headline": "เขียนประมาณ 79% ของ commit · ฝังด้วย script tag เดียว แยก style ด้วย Shadow DOM"
     },
     {
       "name": "BUZZWOO!",
@@ -153,7 +173,9 @@
         "Nuxt 2",
         "TypeScript",
         "Vuetify"
-      ]
+      ],
+      "x-short": "จองบริการนวด",
+      "x-headline": "โมดูล SMS โปรโมชัน แผนที่ supply และ demand และตารางการจอง"
     },
     {
       "name": "BUZZWOO!",
@@ -168,12 +190,16 @@
         "ต้นแบบแบบทดสอบการโฟกัสของสายตา (Nuxt, TypeScript): สร้างเว็บแอปบนมือถือคนเดียวในประมาณ 2 สัปดาห์ ใช้ motion sensor ของโทรศัพท์จับเวลาว่าสายตาปรับโฟกัสระหว่างใกล้และไกลได้เร็วแค่ไหน",
         "WordPress: ดูแลเว็บไซต์ของเอเจนซีเป็นเวลา 3 ปี (block ด้วย ACF/Gutenberg, slider หน้า careers, แก้ layout shift) และทำ style ของ section ต่าง ๆ ให้ร้านค้า WooCommerce ของลูกค้า"
       ],
+      "x-print-skip": [
+        4
+      ],
       "keywords": [
         "Nuxt",
         "Drupal",
         "WordPress"
       ],
-      "x-timeline": false
+      "x-timeline": false,
+      "x-headline": "เว็บแคมเปญเพลง design system บน Drupal 26 component และ WordPress"
     },
     {
       "name": "Wolves Corporation",
@@ -188,10 +214,14 @@
         "ทำงานในเว็บร้านค้าออนไลน์ ที่มีระบบจัดการสินค้า การชำระเงิน ข้อมูลผู้ขายและผู้ซื้อ และระบบติดตามพัสดุ",
         "ทำงานในเว็บไซต์โรงเรียน และแอปภายในสำหรับจัดการงานและติดตามเวลาทำงาน"
       ],
+      "x-print-skip": [
+        4
+      ],
       "keywords": [
         "PHP",
         "jQuery"
-      ]
+      ],
+      "x-headline": "ระบบคลินิก โลจิสติกส์ และร้านค้าออนไลน์ บน framework PHP ภายในบริษัท"
     }
   ],
   "projects": [
@@ -217,7 +247,9 @@
         "Socket.io",
         "Stripe",
         "Claude Code"
-      ]
+      ],
+      "x-short": "Counter Pressing",
+      "x-headline": "ออกแบบ สร้าง และดูแลคนเดียว · ขึ้น production ประมาณ 11 สัปดาห์หลัง commit แรก"
     },
     {
       "name": "Marketplace วิดีโอจากครีเอเตอร์",
@@ -239,7 +271,9 @@
         "Stripe",
         "Tailwind",
         "shadcn/ui"
-      ]
+      ],
+      "x-short": "วิดีโอจากครีเอเตอร์",
+      "x-headline": "สร้างคนเดียวในประมาณ 5 สัปดาห์ · escrow ด้วย Stripe และ pipeline วิดีโอ"
     },
     {
       "name": "PWA คอนเทนต์ไลฟ์สไตล์ของบริษัทประกันชีวิต",
@@ -257,7 +291,9 @@
         "SWR",
         "PWA",
         "SCSS"
-      ]
+      ],
+      "x-short": "PWA คอนเทนต์ไลฟ์สไตล์",
+      "x-headline": "ผู้ commit มากที่สุดในการสร้างปี 2021 ในทีมนักพัฒนา 5 คน"
     },
     {
       "name": "เว็บติดตามร่างกฎหมาย",
@@ -274,7 +310,9 @@
         "Vue",
         "TypeScript",
         "Tailwind"
-      ]
+      ],
+      "x-short": "เว็บติดตามร่างกฎหมาย",
+      "x-headline": "pull request ที่ถูก merge 9 รายการในฐานะอาสาสมัคร"
     }
   ],
   "skills": [
@@ -335,7 +373,7 @@
       ]
     },
     {
-      "name": "โปรเจกต์ส่วนตัว",
+      "name": "Backend และข้อมูล",
       "keywords": [
         "PostgreSQL",
         "Prisma",

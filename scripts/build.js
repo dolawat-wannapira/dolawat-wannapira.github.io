@@ -27,17 +27,22 @@ const versions = [
       download: 'Download PDF',
       country: 'Thailand',
       eyebrow: 'Curriculum vitae',
-      role: 'Role',
+      stack: 'Main stack',
       basedIn: 'Based in',
       since: 'Shipping since',
       nowAt: 'Now at',
+      contact: 'Contact',
+      email: 'Email',
+      language: 'Language',
+      skip: 'Skip to experience',
       glance: (year) => `${year} to now at a glance`,
-      glanceHint: 'Each bar is a project; click one to open it below',
-      lanes: { employer: 'Employer', work: 'Work', freelance: 'Freelance', personal: 'Personal', openSource: 'Open source', now: 'now' },
+      glanceHint: 'Each bar is a project; choose one to open it',
+      backToTimeline: 'Back to the timeline',
+      lanes: { employer: 'Employers', work: 'Work projects', freelance: 'Freelance', personal: 'Personal', openSource: 'Open source', now: 'now' },
     },
   },
-  // The Thai page is for personal reading: unlinked from the English one and kept out of search
-  // results (the theme adds noindex for lang "th").
+  // The Thai page is reached through the language switcher but kept out of search results (the
+  // theme adds noindex for lang "th").
   {
     file: 'resume.th.json',
     dir: `${OUT}/th`,
@@ -55,16 +60,27 @@ const versions = [
       download: 'ดาวน์โหลด PDF',
       country: 'ประเทศไทย',
       eyebrow: 'ประวัติการทำงาน',
-      role: 'ตำแหน่ง',
+      stack: 'เทคโนโลยีหลัก',
       basedIn: 'ที่อยู่',
       since: 'ทำงานมาตั้งแต่',
       nowAt: 'ปัจจุบันทำงานที่',
+      contact: 'ติดต่อ',
+      email: 'อีเมล',
+      language: 'ภาษา',
+      skip: 'ข้ามไปที่ประสบการณ์ทำงาน',
       glance: (year) => `ภาพรวมตั้งแต่ ${year} ถึงปัจจุบัน`,
-      glanceHint: 'แต่ละแท่งคือหนึ่งโปรเจกต์ กดเพื่อเปิดรายละเอียดด้านล่าง',
-      lanes: { employer: 'บริษัท', work: 'งานประจำ', freelance: 'ฟรีแลนซ์', personal: 'ส่วนตัว', openSource: 'โอเพนซอร์ส', now: 'ตอนนี้' },
+      glanceHint: 'แต่ละแท่งคือหนึ่งโปรเจกต์ กดเพื่อเปิดรายละเอียด',
+      backToTimeline: 'กลับไปที่ภาพรวม',
+      lanes: { employer: 'บริษัท', work: 'โปรเจกต์ที่บริษัท', freelance: 'ฟรีแลนซ์', personal: 'ส่วนตัว', openSource: 'โอเพนซอร์ส', now: 'ตอนนี้' },
     },
   },
 ]
+
+// The language switcher on each page; hrefs are relative to that page's folder.
+const switcher = {
+  en: [{ lang: 'en', label: 'EN' }, { lang: 'th', label: 'ไทย', href: 'th/' }],
+  th: [{ lang: 'en', label: 'EN', href: '../' }, { lang: 'th', label: 'ไทย' }],
+}
 
 const browser = process.env.SKIP_PDF ? undefined : await puppeteer.launch()
 try {
@@ -81,7 +97,7 @@ async function buildVersion({ file, dir, lang, pdfSuffix, labels }) {
   mkdirSync(dir, { recursive: true })
   // "now" ends the ongoing bars on the timeline; CI rebuilds on every push.
   const now = new Date().toISOString().slice(0, 7)
-  writeFileSync(`${dir}/index.html`, render(resume, { lang, pdfName, now, labels: { ...labels, description } }))
+  writeFileSync(`${dir}/index.html`, render(resume, { lang, pdfName, now, languages: switcher[lang], labels: { ...labels, description } }))
   copyFileSync(file, `${dir}/resume.json`)
   for (const icon of ['favicon.svg', 'apple-touch-icon.png']) copyFileSync(`assets/${icon}`, `${dir}/${icon}`)
   cpSync('assets/fonts', `${dir}/fonts`, { recursive: true })
