@@ -1,0 +1,245 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Dolawat Wannapira",
+    "label": "Front-End Engineer",
+    "email": "dolawat.wannapira@gmail.com",
+    "url": "https://dolawat-wannapira.github.io",
+    "summary": "Front-end engineer ที่พัฒนาเว็บแอปบน production มาตั้งแต่ปี 2018 ปัจจุบันทำงานที่ BUZZWOO! ตั้งแต่ปี 2020 สร้างและดูแล frontend ของแพลตฟอร์ม SaaS และผลิตภัณฑ์ของลูกค้าด้วย React, Vue และ Angular บน backend ที่เป็น Laravel ผลงานหลักคือ frontend ส่วนใหญ่ด้วย React/TypeScript ของแพลตฟอร์ม SaaS ด้าน compliance ที่มี 5 ผลิตภัณฑ์ และ frontend เกือบทั้งหมดด้วย Vue 3 ของแพลตฟอร์มบริหารงานของเอเจนซี SEO รวมถึงเพิ่ม test ย้าย build tool และอัปเกรด library เพื่อให้ frontend เหล่านี้ดูแลต่อได้ง่าย นอกเวลางานสร้างและดูแล Counter Pressing ซึ่งเป็นคอมมูนิตีฟุตบอลไทยบน SvelteKit ที่ใช้งานจริง โดยทำคนเดียวด้วย workflow แบบ AI-assisted (Claude Code) และรับงาน freelance ก่อนหน้านี้ที่ Wolves Corporation ทำงานในเว็บแอปของลูกค้าทั้งด้านคลินิก โลจิสติกส์ และร้านค้าออนไลน์",
+    "location": {
+      "city": "เชียงใหม่",
+      "countryCode": "TH"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "dolawat-wannapira",
+        "url": "https://www.linkedin.com/in/dolawat-wannapira-888a311bb/"
+      },
+      {
+        "network": "GitHub",
+        "username": "droppdeadz",
+        "url": "https://github.com/droppdeadz"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "แพลตฟอร์มบริหารงาน Compliance (B2B SaaS)",
+      "startDate": "2023-09",
+      "summary": "แพลตฟอร์ม SaaS แบบ multi-tenant ที่ช่วยให้บริษัทในเยอรมนีจัดการงานด้านการคุ้มครองข้อมูล ความปลอดภัยในการทำงาน ความมั่นคงปลอดภัยสารสนเทศ คณะกรรมการลูกจ้าง และ compliance ด้าน AI ได้ในที่เดียว ใช้ Laravel + Inertia กับ frontend ที่เป็น React, TypeScript และ MUI โดยเป็นผู้เขียนประมาณสามในสี่ของ commit ฝั่ง frontend ทั้งหมด",
+      "highlights": [
+        "สร้าง UI ของ workflow ด้าน compliance แบบหลายขั้นตอนที่ยาวมาก (บันทึกกิจกรรมการประมวลผลตาม GDPR, การประเมินผลกระทบด้านการคุ้มครองข้อมูล, การประเมินความเสี่ยง, รายงานอุบัติเหตุ, การประชุมคณะกรรมการลูกจ้าง) และเขียนการ export PDF ฝั่ง server ของหลายฟีเจอร์",
+        "สร้าง frontend ของศูนย์เอกสารที่ใช้ร่วมกันทุกผลิตภัณฑ์: โฟลเดอร์ ขั้นตอนตรวจและอนุมัติ 3 ขั้นพร้อมลายเซ็น ประวัติเวอร์ชัน และ audit trail แล้วฝังเข้าไปในหน้าฟีเจอร์ของ 4 ผลิตภัณฑ์",
+        "ทำ role แบบอ่านอย่างเดียว (Viewer) ให้ทั้ง 5 ผลิตภัณฑ์ (ล็อก input ระดับ theme และ write guard ฝั่ง client) และแก้ช่องโหว่ stored XSS ระดับ High จากการตรวจความปลอดภัย",
+        "นำ Vitest เข้ามาใช้ (เป็นคนเพิ่ม test file ฝั่ง frontend 296 จาก 323 ไฟล์) เพิ่ม Playwright spec 36 จาก 46 ไฟล์ และอัปเกรด MUI จาก v7 เป็น v9 แบบเป็นขั้นตอนโดยไม่มี TypeScript error ใหม่"
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "แพลตฟอร์มบริหารงานของเอเจนซี SEO",
+      "startDate": "2022-01",
+      "summary": "แพลตฟอร์มภายในที่ทีม SEO ของเอเจนซีใช้บริหารโปรเจกต์ลูกค้า ซื้อและติดตาม backlink วางแผนทรัพยากร และรายงานงาน retainer พร้อมแดชบอร์ดสำหรับลูกค้าของเอเจนซี ใช้ Laravel + Inertia กับ Vue 3, Vuetify และ Tailwind โดยเป็นผู้เขียนประมาณ 83% ของ commit ฝั่ง frontend ทั้งหมด",
+      "highlights": [
+        "สร้างแดชบอร์ด SEO สำหรับลูกค้า (ภาพรวมโปรเจกต์ อันดับ keyword ทราฟฟิกจาก Google backlink สุขภาพของหน้าเว็บ และกราฟ KPI) บน data service ที่เพื่อนร่วมทีมสร้าง",
+        "สร้างหน้าบริหารงานภายใน: แดชบอร์ด retainer พร้อม KPI tile และ Gantt timeline การวางแผนทรัพยากร รายงานเวลาทำงาน activity log และรายงาน health check ของโปรเจกต์",
+        "สร้างเครื่องมือ link building: พอร์ต backlink และ paid link การจัดการผู้ขายและเว็บ directory การอัปเดตราคาแบบ bulk การอัปโหลด CSV/Excel พร้อม preview และใบแจ้งหนี้ของผู้ขาย",
+        "ย้าย build ไปใช้ Vite, migrate Inertia จาก 0.x เป็น v3 ในประมาณ 80 ไฟล์, แทน Cypress spec ที่ไม่ได้ใช้ด้วย Vitest browser mode 32 ไฟล์ที่รันใน CI และกำจัดช่องโหว่ระดับ critical จาก npm audit"
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "เครื่องมือให้คะแนนร้านค้าพาร์ทเนอร์",
+      "startDate": "2022-06",
+      "endDate": "2023-07",
+      "summary": "แอปภายในที่พนักงานของแบรนด์ด้านออปติกระดับโลกใช้ให้คะแนนว่าร้านพาร์ทเนอร์หลายพันร้านแสดงตัวตนบนออนไลน์ได้ดีแค่ไหน และติดตามคะแนนในแต่ละช่วงเวลา ใช้ Laravel + Inertia กับ Vue 3, Pinia และ Tailwind โดยเป็นผู้เขียนประมาณ 70% ของ commit ฝั่ง frontend ในปีแรกของการสร้าง",
+      "highlights": [
+        "สร้างแบบประเมินร้านค้า: คำถามแบบใช่/ไม่ใช่ ให้คะแนน และกรอกค่า แยกตามช่องทาง บันทึกอัตโนมัติแบบ debounce พร้อมคะแนนที่อัปเดตทันที คำถามที่ซ่อนตามประเทศ และสถานะ override สำหรับคำตอบที่ดึงมาจาก scraping API",
+        "สร้างชุด component กลาง (input, select, ตารางข้อมูลที่เรียงลำดับได้, card, badge, toast) พร้อม Storybook story และส่วนจัดการผู้ใช้ที่มีการเชิญและกฎของ role",
+        "สร้างหน้ารายงานสำหรับพิมพ์ที่ backend แปลงเป็น PDF รวมถึงแดชบอร์ดด้วย Chart.js, analytics event และ cookie consent",
+        "ย้าย build จาก Laravel Mix ไปใช้ Vite และเพิ่ม Cypress end-to-end spec ส่วนใหญ่"
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "แพลตฟอร์ม SaaS สำหรับโฮสต์พอดแคสต์",
+      "startDate": "2020-11",
+      "endDate": "2021-11",
+      "summary": "แพลตฟอร์มแบบสมาชิกที่ให้ผู้ทำพอดแคสต์เผยแพร่ตอน ตัดต่อเสียงบนเบราว์เซอร์ กำหนดจุดแทรกโฆษณา และดู analytics พร้อมเว็บไซต์พอดแคสต์สาธารณะ frontend เป็น Angular + NgRx บน Laravel API และตั้งแต่เมษายน 2021 เป็น front-end developer คนเดียวของโปรเจกต์",
+      "highlights": [
+        "สร้างระบบชำระเงินค่าสมาชิกฝั่ง frontend ครบทั้ง flow: stepper เลือกแพ็กเกจ การจ่ายด้วย PayPal และบัตรเครดิตพร้อม 3-D Secure และบันทึกวิธีชำระเงิน โค้ดส่วนลด ใบแจ้งหนี้ และสถานะค้างชำระกับยกเลิก",
+        "สร้าง audio editor บนเบราว์เซอร์ด้วย wavesurfer.js สำหรับตัดช่วงเสียงออกจากตอนและกำหนดจุดโฆษณา และทำให้ editor จุดโฆษณาเร็วขึ้นด้วย waveform ที่คำนวณไว้ล่วงหน้าพร้อม fallback สำหรับ iOS",
+        "ทำการตั้งค่า export ไป YouTube, ตอนแบบส่วนตัวที่เข้าได้ผ่านลิงก์, การสวมสิทธิ์ผู้ใช้สำหรับ admin และ cookie consent ที่โหลด tag management หลังผู้ใช้ยินยอมเท่านั้น",
+        "สร้างหน้า blog ของพอดแคสต์สาธารณะ และปรับดีไซน์อีเมลแจ้งเตือนกับอีเมลสรุป analytics รายเดือนด้วย Laravel Blade"
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "เครื่องมือจัดการเคลมอุบัติเหตุ",
+      "startDate": "2022-03",
+      "endDate": "2022-06",
+      "summary": "แอปภายในที่พนักงาน ผู้ประเมิน และทนายของกลุ่มตัวแทนจำหน่ายรถยนต์ใช้จัดการเคสเคลมความเสียหายจากอุบัติเหตุตั้งแต่ต้นจนจบ ใช้ Angular, NgRx และ Angular Material โดยดูแล frontend คนเดียวในปี 2022 บน codebase ที่เพื่อนร่วมทีมสร้างไว้ในปี 2020–21",
+      "highlights": [
+        "ปรับฟอร์มแจ้งเคลมแบบหลายขั้นตอนและแท็บโหมดแก้ไขให้รองรับเคสประเภทใหม่ ด้วย reactive form แบบมีเงื่อนไขสำหรับไฟแนนซ์ ประกันภัย ข้อมูลลูกค้า และคู่กรณี",
+        "สร้างแท็บบัญชี: ตารางใบแจ้งหนี้ที่แก้ไขได้ เพิ่มแถวได้ มียอดรวม อัปโหลดใบแจ้งหนี้ได้ และบันทึกอัตโนมัติแบบ debounce โดยมี NgRx feature ใหม่รองรับ",
+        "เพิ่มสัญญาณสถานะเคสทั่วทั้งแอป: ไอคอนสถานะในรายการ ตัวนับเคส escalation และเครื่องหมายบอกช่องบังคับที่ยังไม่กรอกในแต่ละแท็บ"
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "Widget แชท AI แบบฝังในเว็บอื่นได้",
+      "startDate": "2024-11",
+      "endDate": "2025-07",
+      "summary": "ผู้ช่วยแชท AI ที่เว็บไซต์ใดก็เพิ่มได้ด้วย script tag เดียว และมีเวอร์ชัน white-label ที่ใช้งานบนเว็บไซต์ของผู้ผลิตระดับนานาชาติ ใช้ React 19 และ Vite library mode โดยเป็นผู้เขียนประมาณ 79% ของ commit",
+      "highlights": [
+        "สร้าง widget เป็น bundle เดียวแบบ UMD/ES พร้อม script tag และ JavaScript API (init, open, close, updateSettings, destroy)",
+        "แยก widget ออกจาก CSS ของเว็บที่ฝังด้วยการ render ใน Shadow DOM และ inject style เอง จึงฝังในเว็บ Drupal และ WordPress ได้โดย style ไม่ชนกัน",
+        "เชื่อมแชทกับ REST API ของ backend AI (conversation token, page context, คำตอบแบบ Markdown) และสร้างฟอร์มเก็บ lead ในแชทพร้อม GDPR consent สำหรับคำถามด้านการขาย"
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "แพลตฟอร์มจองบริการนวดแบบ On-Demand",
+      "startDate": "2021-08",
+      "endDate": "2022-05",
+      "summary": "บริการด้านสุขภาพในไทยที่ลูกค้าจองหมอนวดให้มาที่บ้าน โรงแรม หรือออฟฟิศ ทำฟีเจอร์ให้ระบบ back office ของ admin และเว็บแอปจอง ด้วย Nuxt 2, TypeScript และ Vuetify",
+      "highlights": [
+        "สร้างโมดูล SMS โปรโมชัน: หน้าเขียนข้อความพร้อมตัวกรองกลุ่มเป้าหมาย ตัวนับ 160 ตัวอักษรที่เผื่อพื้นที่ให้ placeholder สำหรับข้อความเฉพาะบุคคล และหน้าภาพรวมแคมเปญ",
+        "ปรับแผนที่ supply และ demand บน Google Maps ให้มี marker แยกประเภท clustering หน้าต่างข้อมูลที่ลิงก์ไปยังโปรไฟล์ และคำอธิบายสัญลักษณ์",
+        "เพิ่มตารางการจองที่แบ่งหน้าและเรียงลำดับได้ในหน้าลูกค้า หมอนวด และพาร์ทเนอร์ และหน้า admin สำหรับตั้งเวลาให้บริการตามพื้นที่ที่แอปจองนำไปใช้"
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "โปรเจกต์ลูกค้าระยะสั้น",
+      "startDate": "2021-10",
+      "endDate": "2025-06",
+      "summary": "งานสร้างและดูแลระยะสั้นให้ลูกค้าของเอเจนซีและเว็บไซต์ของเอเจนซีเอง",
+      "highlights": [
+        "เว็บไซต์แคมเปญเพลง (Nuxt, TypeScript): สร้างส่วนใหญ่ของเว็บแบบ mobile-first ที่ให้แฟนเพลงอัดเสียงร้องบนเบราว์เซอร์แล้วส่งเข้าร่วม รวมถึง age gate และ flow การอัปโหลด ใช้เวลาประมาณ 7 สัปดาห์กับนักพัฒนาอีกหนึ่งคน",
+        "Design system บน Drupal: สร้าง component ที่ใช้ซ้ำได้ 26 ตัวด้วย Twig/SCSS พร้อม Storybook story ให้เว็บไซต์หลายภูมิภาคของผู้ผลิตรายหนึ่งภายใน 6 สัปดาห์",
+        "ต้นแบบแบบทดสอบการโฟกัสของสายตา (Nuxt, TypeScript): สร้างเว็บแอปบนมือถือคนเดียวในประมาณ 2 สัปดาห์ ใช้ motion sensor ของโทรศัพท์จับเวลาว่าสายตาปรับโฟกัสระหว่างใกล้และไกลได้เร็วแค่ไหน",
+        "WordPress: ดูแลเว็บไซต์ของเอเจนซีเป็นเวลา 3 ปี (block ด้วย ACF/Gutenberg, slider หน้า careers, แก้ layout shift) และทำ style ของ section ต่าง ๆ ให้ร้านค้า WooCommerce ของลูกค้า"
+      ]
+    },
+    {
+      "name": "Wolves Corporation",
+      "description": "Front-End Developer",
+      "position": "เว็บแอปของลูกค้าและภายในบริษัท",
+      "startDate": "2018-01",
+      "endDate": "2020-10",
+      "summary": "เว็บแอปทั้งของลูกค้าและที่ใช้ภายในบริษัท ซึ่งสร้างบน framework ภายในของบริษัทที่ใช้ PHP + jQuery",
+      "highlights": [
+        "ทำงานในระบบบริหารคลินิก: สต็อกเวชภัณฑ์ การนัดหมาย และโมเดล 3D ของร่างกายสำหรับระบุอาการ",
+        "ทำงานในระบบ back office ด้านโลจิสติกส์ สำหรับจัดการเส้นทาง ลูกค้า รถ คนขับ ใบแจ้งหนี้ และการชำระเงิน",
+        "ทำงานในเว็บร้านค้าออนไลน์ ที่มีระบบจัดการสินค้า การชำระเงิน ข้อมูลผู้ขายและผู้ซื้อ และระบบติดตามพัสดุ",
+        "ทำงานในเว็บไซต์โรงเรียน และแอปภายในสำหรับจัดการงานและติดตามเวลาทำงาน"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Counter Pressing",
+      "url": "https://counter-pressing.com",
+      "type": "โปรเจกต์ส่วนตัว",
+      "startDate": "2026-02",
+      "description": "คอมมูนิตีฟุตบอลไทยที่มีเว็บบอร์ด ข่าวที่ AI คัดเลือกและแปล ผลบอลสดและตารางคะแนน เกมทายผล แชทแบบเรียลไทม์ และสมาชิกผู้สนับสนุนแบบเสียเงิน ออกแบบ สร้าง และดูแลคนเดียว ขึ้น production ได้ประมาณ 11 สัปดาห์หลัง commit แรก",
+      "highlights": [
+        "สร้าง pipeline ข่าวด้วย AI ที่ดึงข่าวจาก RSS กรองข่าวซ้ำ 2 ขั้น แล้วให้คะแนนและแปลเป็นภาษาไทยด้วย Google Gemini โดยการทำ batch ลด input token ของขั้นให้คะแนนได้ประมาณ 70%",
+        "เชื่อมต่อ API ข้อมูลฟุตบอลผ่านตัวจัดตารางการ sync ที่คุมโควตา ซึ่งเป็นฐานของผลบอลสด ตารางคะแนน สายการแข่งขันรอบน็อกเอาต์ หน้าทีม และเกมทายผลตลอดฤดูกาล",
+        "วาง workflow แบบ AI-assisted: orchestrator ของ Claude Code ที่ส่งงานต่อให้ subagent แยกตาม layer, rule ตาม path, project skill, git-guard hook, issue ที่เขียนให้ agent ทำต่อได้ และ invariant test ใน CI",
+        "ทำ Stripe subscription ที่รองรับ PromptPay, พื้นที่โฆษณาที่ปิดได้ทันทีด้วย kill switch, ระบบแบนผู้ใช้, การตรวจจับหลายบัญชี และการลบบัญชีด้วยตัวเอง"
+      ],
+      "keywords": ["SvelteKit", "Svelte 5", "TypeScript", "PostgreSQL", "Prisma", "Redis", "Socket.io", "Stripe", "Claude Code"]
+    },
+    {
+      "name": "Marketplace วิดีโอจากครีเอเตอร์",
+      "type": "งาน freelance ให้ลูกค้า",
+      "startDate": "2026-05",
+      "endDate": "2026-06",
+      "description": "MVP ของ marketplace สองภาษา (ไทย/อังกฤษ) ที่แฟน ๆ จองวิดีโอสั้นเฉพาะบุคคลจากครีเอเตอร์ได้ มี flow การจอง แดชบอร์ดครีเอเตอร์ และแผงควบคุมของผู้ดูแล สร้างคนเดียวด้วย workflow แบบ AI-assisted ในประมาณ 5 สัปดาห์ deploy ให้ลูกค้าทดสอบแล้ว แต่หยุดพัฒนาก่อนที่จะยืนยันการเปิดตัวจริง",
+      "highlights": [
+        "เขียน requirement เอง (proposal, BRD, SRS) และรับมือกับ change request จากลูกค้า 20 รายการ รวมถึงการเปลี่ยนไปจ่ายเงินครีเอเตอร์แบบ manual และเปลี่ยนไปใช้บริการโฮสต์วิดีโอระหว่างโปรเจกต์",
+        "สร้างแกนหลักของระบบชำระเงิน: Stripe webhook แบบ idempotent, escrow ที่เก็บในฐานข้อมูลพร้อม job ปล่อยเงิน, การคืนเงินอัตโนมัติตาม SLA และราคาหลายสกุลเงิน",
+        "สร้าง pipeline วิดีโอ (อัปโหลดตรงจากเบราว์เซอร์, signed playback, queue worker ที่ใช้ ffmpeg) บน Postgres migration 78 ไฟล์พร้อม test ของ row-level security"
+      ],
+      "keywords": ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Stripe", "Tailwind", "shadcn/ui"]
+    },
+    {
+      "name": "PWA คอนเทนต์ไลฟ์สไตล์ของบริษัทประกันชีวิต",
+      "type": "งาน freelance ผ่านเอเจนซี",
+      "startDate": "2021-04",
+      "endDate": "2021-08",
+      "description": "เว็บไซต์คอนเทนต์ภาษาไทยแบบ mobile-first และ PWA ของแบรนด์ประกันชีวิต เป็นผู้ commit มากที่สุดในการสร้างปี 2021 ในทีมนักพัฒนา 5 คน",
+      "highlights": [
+        "สร้างระบบค้นหาครบทั้ง flow: overlay ค้นหาแบบเต็มจอพร้อมประวัติการค้นหา autocomplete จาก tag และหน้าผลลัพธ์ที่ render ฝั่ง server",
+        "สร้างหน้า bookmark ด้วย SWR หน้า browse บน headless CMS คำทักทายพร้อมสภาพอากาศตามตำแหน่ง และ dialog สมัครรับจดหมายข่าวที่เคารพ cookie consent"
+      ],
+      "keywords": ["Next.js", "React", "SWR", "PWA", "SCSS"]
+    },
+    {
+      "name": "เว็บติดตามร่างกฎหมาย",
+      "type": "โอเพนซอร์ส",
+      "startDate": "2023-06",
+      "endDate": "2023-08",
+      "description": "เว็บไซต์แบบ static จากคอมมูนิตี civic tech ที่ติดตามร่างกฎหมายของพรรคการเมืองไทยพรรคหนึ่งระหว่างทางเข้าสู่รัฐสภา ร่วมพัฒนาเป็นอาสาสมัคร มี pull request ที่ถูก merge 9 รายการ",
+      "highlights": [
+        "สร้างหน้าสำรวจร่างกฎหมายโดยปรับหน้าสำรวจนโยบายเดิมให้รองรับ data model ใหม่ที่มีหมวดหมู่ สถานะ ไทม์ไลน์ และลิงก์",
+        "ทำให้เว็บ static แสดงข้อมูลล่าสุดได้โดยไม่ต้อง rebuild ด้วยการโหลดไฟล์ข้อมูลที่ sync ทุกชั่วโมงตอน runtime และแก้ปัญหาที่ Lighthouse พบใน component กลาง"
+      ],
+      "keywords": ["Nuxt", "Vue", "TypeScript", "Tailwind"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Front end",
+      "keywords": ["TypeScript", "JavaScript", "React", "Next.js", "Vue 3", "Nuxt", "Angular", "Svelte", "SvelteKit", "HTML", "CSS / SCSS"]
+    },
+    {
+      "name": "State และข้อมูล",
+      "keywords": ["Inertia.js", "NgRx", "Pinia", "Vuex", "SWR"]
+    },
+    {
+      "name": "UI",
+      "keywords": ["Tailwind CSS", "MUI", "Vuetify", "Angular Material", "shadcn/ui", "Storybook"]
+    },
+    {
+      "name": "Testing และเครื่องมือ",
+      "keywords": ["Vitest", "Playwright", "Cypress", "Vite", "Webpack", "Sentry"]
+    },
+    {
+      "name": "แพลตฟอร์ม",
+      "keywords": ["Laravel (Inertia, Blade)", "WordPress (ACF, Gutenberg, WooCommerce)", "Drupal (Twig)"]
+    },
+    {
+      "name": "โปรเจกต์ส่วนตัว",
+      "keywords": ["PostgreSQL", "Prisma", "Supabase", "Redis", "Socket.io", "Stripe"]
+    },
+    {
+      "name": "พัฒนาด้วย AI",
+      "keywords": ["Claude Code (subagents, skills, hooks)", "Codex review", "Google Gemini API"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "มหาวิทยาลัยเชียงใหม่",
+      "studyType": "วิทยาศาสตรบัณฑิต",
+      "area": "วิศวกรรมซอฟต์แวร์",
+      "startDate": "2014",
+      "endDate": "2018"
+    }
+  ],
+  "languages": [
+    { "language": "ภาษาไทย", "fluency": "ภาษาแม่" },
+    { "language": "ภาษาอังกฤษ", "fluency": "ใช้ในการทำงานได้อย่างมืออาชีพ" }
+  ]
+}

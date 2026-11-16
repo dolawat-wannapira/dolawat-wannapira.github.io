@@ -1,0 +1,245 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Dolawat Wannapira",
+    "label": "Front-End Engineer",
+    "email": "dolawat.wannapira@gmail.com",
+    "url": "https://dolawat-wannapira.github.io",
+    "summary": "Front-end engineer building production web apps since 2018. At BUZZWOO! since 2020 I build and maintain the frontends of SaaS platforms and client products in React, Vue and Angular on Laravel back ends, including most of the React/TypeScript frontend of a five-product compliance SaaS and almost all of the Vue 3 frontend of an SEO agency's operations platform. I add the tests, build-tool moves and upgrades that keep those frontends maintainable. Outside work I built and run Counter Pressing, a live Thai football community on SvelteKit, solo with an AI-assisted Claude Code workflow, and take freelance builds. Earlier, at Wolves Corporation, I worked on client web apps for clinics, logistics companies and online shops.",
+    "location": {
+      "city": "Chiang Mai",
+      "countryCode": "TH"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "dolawat-wannapira",
+        "url": "https://www.linkedin.com/in/dolawat-wannapira-888a311bb/"
+      },
+      {
+        "network": "GitHub",
+        "username": "droppdeadz",
+        "url": "https://github.com/droppdeadz"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "Compliance Management Platform (B2B SaaS)",
+      "startDate": "2023-09",
+      "summary": "A multi-tenant SaaS that helps German companies run data-protection, occupational-safety, information-security, works-council and AI-compliance processes in one place. Laravel + Inertia with a React, TypeScript and MUI frontend; I wrote about three quarters of all frontend commits.",
+      "highlights": [
+        "Built the UI for long multi-step compliance workflows (GDPR processing activities, data-protection impact assessments, risk assessments, accident reports, works-council meetings) and wrote many of their server-side PDF exports.",
+        "Built the frontend of a document center shared by all products: folders, a three-step review and approval with signatures, version history and an audit trail, embedded into feature pages across four products.",
+        "Shipped a read-only Viewer role across five products (a theme-level input lock plus a client-side write guard) and fixed a High-rated stored-XSS finding from a security audit.",
+        "Introduced Vitest (first added 296 of the 323 frontend test files), added 36 of 46 Playwright specs, and ran a staged MUI v7 to v9 upgrade with no new TypeScript errors."
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "SEO Agency Operations Platform",
+      "startDate": "2022-01",
+      "summary": "An internal platform where an agency's SEO team runs client projects, buys and tracks backlinks, plans resources and reports on retainers, plus a dashboard for the agency's customers. Laravel + Inertia with Vue 3, Vuetify and Tailwind; I wrote about 83% of all frontend commits.",
+      "highlights": [
+        "Built the customer-facing SEO dashboard (project overview, keyword rankings, Google traffic, backlinks, page health and KPI charts) on top of data services built by teammates.",
+        "Built the internal management views: a retainer dashboard with KPI tiles and a Gantt timeline, resource planning, time reporting, an activity log and a project health-check report.",
+        "Built the link-building tools: backlink and paid-link portfolios, seller and directory-site management, bulk price updates, CSV/Excel upload with preview and seller invoices.",
+        "Moved the build to Vite, migrated Inertia 0.x to v3 across about 80 files, replaced unused Cypress specs with 32 Vitest browser-mode spec files gated in CI, and removed the critical npm audit finding."
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "Retail Partner Scoring Tool",
+      "startDate": "2022-06",
+      "endDate": "2023-07",
+      "summary": "An internal app where a global optics brand's staff score how well thousands of partner stores show up online and track the scores over time. Laravel + Inertia with Vue 3, Pinia and Tailwind; I wrote about 70% of frontend commits in the first build year.",
+      "highlights": [
+        "Built the store-assessment questionnaire: yes/no, rating and value questions per channel, debounced autosave with a live score, per-country hidden questions and override states for answers filled from scraping APIs.",
+        "Built the shared component set (inputs, selects, a sortable data table, cards, badges, toasts) with Storybook stories, and the user-management area with invitations and role rules.",
+        "Built the printable report page that the backend turns into a PDF, plus Chart.js dashboards, analytics events and cookie consent.",
+        "Migrated the build from Laravel Mix to Vite and added most of the Cypress end-to-end specs."
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "Podcast Hosting SaaS",
+      "startDate": "2020-11",
+      "endDate": "2021-11",
+      "summary": "A subscription platform where podcasters publish episodes, edit audio in the browser, set dynamic-ad breakpoints and get analytics and a public podcast site. Angular + NgRx frontend on a Laravel API; from April 2021 I was the only front-end developer on it.",
+      "highlights": [
+        "Built the subscription checkout end to end on the frontend: plan stepper, PayPal and credit-card payments with 3-D Secure and saved payment methods, discount codes, invoices and overdue and cancellation states.",
+        "Built an in-browser audio editor on wavesurfer.js for cutting regions from an episode and marking ad breaks, and sped up the ad-breakpoint editor with pre-computed waveforms and an iOS fallback.",
+        "Shipped YouTube export settings, link-only private episodes, admin impersonation and a cookie consent that loads tag management only after opt-in.",
+        "Built the public podcast blog pages and restyled the transactional and monthly analytics emails in Laravel Blade."
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "Accident Damage-Claim Tool",
+      "startDate": "2022-03",
+      "endDate": "2022-06",
+      "summary": "An internal app where a car dealership group's staff, assessors and lawyers handle accident damage cases end to end. Angular, NgRx and Angular Material; I ran its frontend on my own in 2022, on a codebase teammates built in 2020–21.",
+      "highlights": [
+        "Reworked the multi-step claim intake wizard and its edit-mode tabs for a new case type, with conditional reactive forms for financing, insurance, customer data and accident parties.",
+        "Built the accounting tab: an editable invoice table with dynamic rows, sums, invoice upload and debounced autosave, backed by a new NgRx feature.",
+        "Added case-status signals across the app: list status icons, an escalation counter and per-tab markers for missing mandatory fields."
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "Embeddable AI Chat Widget",
+      "startDate": "2024-11",
+      "endDate": "2025-07",
+      "summary": "A drop-in AI chat assistant that any website adds with one script tag, with a white-labelled variant running on an international manufacturer's website. React 19 and Vite library mode; I wrote about 79% of the commits.",
+      "highlights": [
+        "Built the widget as a single UMD/ES bundle with a script-tag and JavaScript API (init, open, close, updateSettings, destroy).",
+        "Isolated it from host-site CSS by rendering inside a Shadow DOM with injected styles, so it drops into Drupal and WordPress sites without style clashes.",
+        "Integrated the chat with the AI backend's REST API (conversation tokens, page context, Markdown answers) and built an in-chat lead form with GDPR consent for sales inquiries."
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "On-Demand Massage Booking Platform",
+      "startDate": "2021-08",
+      "endDate": "2022-05",
+      "summary": "A Thai wellness service where customers book a massage therapist to their home, hotel or office. I built features for the Nuxt 2, TypeScript and Vuetify admin back office and the booking web app.",
+      "highlights": [
+        "Built the promotional SMS module: a composer with target filters, a 160-character counter that reserves space for personalisation placeholders, and campaign overview pages.",
+        "Improved the supply-and-demand map on Google Maps with typed markers, clustering, info windows linking to profiles and a legend.",
+        "Added paginated, sortable booking tables to the customer, therapist and partner pages, and an admin page for per-area service hours used by the booking app."
+      ]
+    },
+    {
+      "name": "BUZZWOO!",
+      "description": "Front-End Developer",
+      "position": "Shorter Client Projects",
+      "startDate": "2021-10",
+      "endDate": "2025-06",
+      "summary": "Short builds and maintenance for agency clients and the agency itself.",
+      "highlights": [
+        "Music campaign microsite (Nuxt, TypeScript): built most of a mobile-first site where fans recorded vocals in the browser and submitted them, including the age gate and the upload flow, in about seven weeks with one other developer.",
+        "Drupal design system: built 26 reusable Twig/SCSS components with Storybook stories for a multi-region manufacturer website in six weeks.",
+        "Eye-focus test prototype (Nuxt, TypeScript): built a mobile web app on my own in about two weeks that uses the phone's motion sensors to time how fast the eyes refocus between near and far.",
+        "WordPress: maintained the agency's own website for three years (ACF/Gutenberg blocks, a careers slider, layout-shift fixes) and styled sections for client WooCommerce shops."
+      ]
+    },
+    {
+      "name": "Wolves Corporation",
+      "description": "Front-End Developer",
+      "position": "Client and Internal Web Apps",
+      "startDate": "2018-01",
+      "endDate": "2020-10",
+      "summary": "Client and internal web apps built on the company's in-house PHP + jQuery framework.",
+      "highlights": [
+        "Worked on a clinic management system: supply inventory, appointment scheduling and a 3D body model for marking symptoms.",
+        "Worked on logistics back offices for routes, clients, vehicles, drivers, invoices and payments.",
+        "Worked on online shops with product management, payments, seller and buyer data and cargo tracking.",
+        "Worked on a school website and an internal task-management and time-tracking app."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Counter Pressing",
+      "url": "https://counter-pressing.com",
+      "type": "Personal project",
+      "startDate": "2026-02",
+      "description": "A Thai football community with a forum, AI-curated and translated news, live scores and standings, match predictions, real-time chat and paid supporter tiers. I designed, built and run it solo; it reached production about 11 weeks after the first commit.",
+      "highlights": [
+        "Built an AI news pipeline that ingests RSS sources, de-duplicates in two stages, then scores and translates stories into Thai with Google Gemini; batching cut scoring input tokens by about 70%.",
+        "Integrated a football data API through a quota-aware sync scheduler that powers live scores, standings, knockout brackets, team pages and a season-long prediction game.",
+        "Set up the AI-assisted workflow: a Claude Code orchestrator handing work to per-layer subagents, path-scoped rules, project skills, git-guard hooks, agent-ready issues and CI invariant tests.",
+        "Shipped Stripe subscriptions with PromptPay, ad slots behind kill switches, a ban system, multi-account detection and self-service account deletion."
+      ],
+      "keywords": ["SvelteKit", "Svelte 5", "TypeScript", "PostgreSQL", "Prisma", "Redis", "Socket.io", "Stripe", "Claude Code"]
+    },
+    {
+      "name": "Creator-Video Marketplace",
+      "type": "Freelance client project",
+      "startDate": "2026-05",
+      "endDate": "2026-06",
+      "description": "A bilingual (Thai/English) marketplace MVP where fans book personalized short videos from creators, with a booking flow, a creator dashboard and an operator admin panel. I built it solo with an AI-assisted workflow in about five weeks; it was deployed for client testing, and development stopped before a confirmed public launch.",
+      "highlights": [
+        "Wrote the requirements (proposal, BRD, SRS) and handled 20 dated client change requests, including a switch to manual payouts and to a hosted video service mid-project.",
+        "Built the payment core: idempotent Stripe webhooks, escrow held in the database with a release job, SLA-based automatic refunds and multi-currency pricing.",
+        "Built the video pipeline (direct browser upload, signed playback, a queue worker with ffmpeg) on 78 Postgres migrations with row-level-security tests."
+      ],
+      "keywords": ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Stripe", "Tailwind", "shadcn/ui"]
+    },
+    {
+      "name": "Lifestyle Content PWA for a Life Insurer",
+      "type": "Freelance, via an agency",
+      "startDate": "2021-04",
+      "endDate": "2021-08",
+      "description": "A Thai, mobile-first content site and PWA from a life-insurance brand. I was the top committer of the 2021 build in a team of five developers.",
+      "highlights": [
+        "Built the site search end to end: a full-screen overlay with search history, tag autocomplete and server-rendered result pages.",
+        "Built the bookmarks page with SWR, the browse pages on the headless CMS, a location-based weather greeting and a newsletter dialog that respects cookie consent."
+      ],
+      "keywords": ["Next.js", "React", "SWR", "PWA", "SCSS"]
+    },
+    {
+      "name": "Law-Draft Tracker",
+      "type": "Open source",
+      "startDate": "2023-06",
+      "endDate": "2023-08",
+      "description": "A static site from a civic-tech community that tracks a Thai political party's law drafts on their way to Parliament. I contributed 9 merged pull requests as a volunteer.",
+      "highlights": [
+        "Built the laws explorer page by adapting the existing promise explorer to a new data model with topics, statuses, timelines and links.",
+        "Made the static site show current data without a rebuild by loading the hourly-synced data file at runtime, and fixed Lighthouse findings in shared components."
+      ],
+      "keywords": ["Nuxt", "Vue", "TypeScript", "Tailwind"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Front end",
+      "keywords": ["TypeScript", "JavaScript", "React", "Next.js", "Vue 3", "Nuxt", "Angular", "Svelte", "SvelteKit", "HTML", "CSS / SCSS"]
+    },
+    {
+      "name": "State and data",
+      "keywords": ["Inertia.js", "NgRx", "Pinia", "Vuex", "SWR"]
+    },
+    {
+      "name": "UI",
+      "keywords": ["Tailwind CSS", "MUI", "Vuetify", "Angular Material", "shadcn/ui", "Storybook"]
+    },
+    {
+      "name": "Testing and tooling",
+      "keywords": ["Vitest", "Playwright", "Cypress", "Vite", "Webpack", "Sentry"]
+    },
+    {
+      "name": "Platforms",
+      "keywords": ["Laravel (Inertia, Blade)", "WordPress (ACF, Gutenberg, WooCommerce)", "Drupal (Twig)"]
+    },
+    {
+      "name": "Side projects",
+      "keywords": ["PostgreSQL", "Prisma", "Supabase", "Redis", "Socket.io", "Stripe"]
+    },
+    {
+      "name": "AI-assisted development",
+      "keywords": ["Claude Code (subagents, skills, hooks)", "Codex review", "Google Gemini API"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Chiang Mai University",
+      "studyType": "Bachelor of Science",
+      "area": "Software Engineering",
+      "startDate": "2014",
+      "endDate": "2018"
+    }
+  ],
+  "languages": [
+    { "language": "Thai", "fluency": "Native" },
+    { "language": "English", "fluency": "Professional working proficiency" }
+  ]
+}
