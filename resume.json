@@ -35,6 +35,12 @@
         "Built the frontend of a document center shared by all products: folders, a three-step review and approval with signatures, version history and an audit trail, embedded into feature pages across four products.",
         "Shipped a read-only Viewer role across five products (a theme-level input lock plus a client-side write guard) and fixed a High-rated stored-XSS finding from a security audit.",
         "Introduced Vitest (first added 296 of the 323 frontend test files), added 36 of 46 Playwright specs, and ran a staged MUI v7 to v9 upgrade with no new TypeScript errors."
+      ],
+      "keywords": [
+        "React",
+        "TypeScript",
+        "MUI",
+        "Inertia"
       ]
     },
     {
@@ -48,6 +54,12 @@
         "Built the internal management views: a retainer dashboard with KPI tiles and a Gantt timeline, resource planning, time reporting, an activity log and a project health-check report.",
         "Built the link-building tools: backlink and paid-link portfolios, seller and directory-site management, bulk price updates, CSV/Excel upload with preview and seller invoices.",
         "Moved the build to Vite, migrated Inertia 0.x to v3 across about 80 files, replaced unused Cypress specs with 32 Vitest browser-mode spec files gated in CI, and removed the critical npm audit finding."
+      ],
+      "keywords": [
+        "Vue 3",
+        "Vuetify",
+        "Tailwind",
+        "Inertia"
       ]
     },
     {
@@ -62,6 +74,12 @@
         "Built the shared component set (inputs, selects, a sortable data table, cards, badges, toasts) with Storybook stories, and the user-management area with invitations and role rules.",
         "Built the printable report page that the backend turns into a PDF, plus Chart.js dashboards, analytics events and cookie consent.",
         "Migrated the build from Laravel Mix to Vite and added most of the Cypress end-to-end specs."
+      ],
+      "keywords": [
+        "Vue 3",
+        "Pinia",
+        "Tailwind",
+        "Storybook"
       ]
     },
     {
@@ -76,6 +94,11 @@
         "Built an in-browser audio editor on wavesurfer.js for cutting regions from an episode and marking ad breaks, and sped up the ad-breakpoint editor with pre-computed waveforms and an iOS fallback.",
         "Shipped YouTube export settings, link-only private episodes, admin impersonation and a cookie consent that loads tag management only after opt-in.",
         "Built the public podcast blog pages and restyled the transactional and monthly analytics emails in Laravel Blade."
+      ],
+      "keywords": [
+        "Angular",
+        "NgRx",
+        "wavesurfer.js"
       ]
     },
     {
@@ -89,6 +112,11 @@
         "Reworked the multi-step claim intake wizard and its edit-mode tabs for a new case type, with conditional reactive forms for financing, insurance, customer data and accident parties.",
         "Built the accounting tab: an editable invoice table with dynamic rows, sums, invoice upload and debounced autosave, backed by a new NgRx feature.",
         "Added case-status signals across the app: list status icons, an escalation counter and per-tab markers for missing mandatory fields."
+      ],
+      "keywords": [
+        "Angular",
+        "NgRx",
+        "Angular Material"
       ]
     },
     {
@@ -102,6 +130,11 @@
         "Built the widget as a single UMD/ES bundle with a script-tag and JavaScript API (init, open, close, updateSettings, destroy).",
         "Isolated it from host-site CSS by rendering inside a Shadow DOM with injected styles, so it drops into Drupal and WordPress sites without style clashes.",
         "Integrated the chat with the AI backend's REST API (conversation tokens, page context, Markdown answers) and built an in-chat lead form with GDPR consent for sales inquiries."
+      ],
+      "keywords": [
+        "React 19",
+        "Vite",
+        "Shadow DOM"
       ]
     },
     {
@@ -115,6 +148,11 @@
         "Built the promotional SMS module: a composer with target filters, a 160-character counter that reserves space for personalisation placeholders, and campaign overview pages.",
         "Improved the supply-and-demand map on Google Maps with typed markers, clustering, info windows linking to profiles and a legend.",
         "Added paginated, sortable booking tables to the customer, therapist and partner pages, and an admin page for per-area service hours used by the booking app."
+      ],
+      "keywords": [
+        "Nuxt 2",
+        "TypeScript",
+        "Vuetify"
       ]
     },
     {
@@ -129,7 +167,13 @@
         "Drupal design system: built 26 reusable Twig/SCSS components with Storybook stories for a multi-region manufacturer website in six weeks.",
         "Eye-focus test prototype (Nuxt, TypeScript): built a mobile web app on my own in about two weeks that uses the phone's motion sensors to time how fast the eyes refocus between near and far.",
         "WordPress: maintained the agency's own website for three years (ACF/Gutenberg blocks, a careers slider, layout-shift fixes) and styled sections for client WooCommerce shops."
-      ]
+      ],
+      "keywords": [
+        "Nuxt",
+        "Drupal",
+        "WordPress"
+      ],
+      "x-timeline": false
     },
     {
       "name": "Wolves Corporation",
@@ -143,6 +187,10 @@
         "Worked on logistics back offices for routes, clients, vehicles, drivers, invoices and payments.",
         "Worked on online shops with product management, payments, seller and buyer data and cargo tracking.",
         "Worked on a school website and an internal task-management and time-tracking app."
+      ],
+      "keywords": [
+        "PHP",
+        "jQuery"
       ]
     }
   ],
@@ -159,7 +207,17 @@
         "Set up the AI-assisted workflow: a Claude Code orchestrator handing work to per-layer subagents, path-scoped rules, project skills, git-guard hooks, agent-ready issues and CI invariant tests.",
         "Shipped Stripe subscriptions with PromptPay, ad slots behind kill switches, a ban system, multi-account detection and self-service account deletion."
       ],
-      "keywords": ["SvelteKit", "Svelte 5", "TypeScript", "PostgreSQL", "Prisma", "Redis", "Socket.io", "Stripe", "Claude Code"]
+      "keywords": [
+        "SvelteKit",
+        "Svelte 5",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "Redis",
+        "Socket.io",
+        "Stripe",
+        "Claude Code"
+      ]
     },
     {
       "name": "Creator-Video Marketplace",
@@ -172,7 +230,16 @@
         "Built the payment core: idempotent Stripe webhooks, escrow held in the database with a release job, SLA-based automatic refunds and multi-currency pricing.",
         "Built the video pipeline (direct browser upload, signed playback, a queue worker with ffmpeg) on 78 Postgres migrations with row-level-security tests."
       ],
-      "keywords": ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Stripe", "Tailwind", "shadcn/ui"]
+      "keywords": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Supabase",
+        "PostgreSQL",
+        "Stripe",
+        "Tailwind",
+        "shadcn/ui"
+      ]
     },
     {
       "name": "Lifestyle Content PWA for a Life Insurer",
@@ -184,7 +251,13 @@
         "Built the site search end to end: a full-screen overlay with search history, tag autocomplete and server-rendered result pages.",
         "Built the bookmarks page with SWR, the browse pages on the headless CMS, a location-based weather greeting and a newsletter dialog that respects cookie consent."
       ],
-      "keywords": ["Next.js", "React", "SWR", "PWA", "SCSS"]
+      "keywords": [
+        "Next.js",
+        "React",
+        "SWR",
+        "PWA",
+        "SCSS"
+      ]
     },
     {
       "name": "Law-Draft Tracker",
@@ -196,37 +269,89 @@
         "Built the laws explorer page by adapting the existing promise explorer to a new data model with topics, statuses, timelines and links.",
         "Made the static site show current data without a rebuild by loading the hourly-synced data file at runtime, and fixed Lighthouse findings in shared components."
       ],
-      "keywords": ["Nuxt", "Vue", "TypeScript", "Tailwind"]
+      "keywords": [
+        "Nuxt",
+        "Vue",
+        "TypeScript",
+        "Tailwind"
+      ]
     }
   ],
   "skills": [
     {
       "name": "Front end",
-      "keywords": ["TypeScript", "JavaScript", "React", "Next.js", "Vue 3", "Nuxt", "Angular", "Svelte", "SvelteKit", "HTML", "CSS / SCSS"]
+      "keywords": [
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Vue 3",
+        "Nuxt",
+        "Angular",
+        "Svelte",
+        "SvelteKit",
+        "HTML",
+        "CSS / SCSS"
+      ]
     },
     {
       "name": "State and data",
-      "keywords": ["Inertia.js", "NgRx", "Pinia", "Vuex", "SWR"]
+      "keywords": [
+        "Inertia.js",
+        "NgRx",
+        "Pinia",
+        "Vuex",
+        "SWR"
+      ]
     },
     {
       "name": "UI",
-      "keywords": ["Tailwind CSS", "MUI", "Vuetify", "Angular Material", "shadcn/ui", "Storybook"]
+      "keywords": [
+        "Tailwind CSS",
+        "MUI",
+        "Vuetify",
+        "Angular Material",
+        "shadcn/ui",
+        "Storybook"
+      ]
     },
     {
       "name": "Testing and tooling",
-      "keywords": ["Vitest", "Playwright", "Cypress", "Vite", "Webpack", "Sentry"]
+      "keywords": [
+        "Vitest",
+        "Playwright",
+        "Cypress",
+        "Vite",
+        "Webpack",
+        "Sentry"
+      ]
     },
     {
       "name": "Platforms",
-      "keywords": ["Laravel (Inertia, Blade)", "WordPress (ACF, Gutenberg, WooCommerce)", "Drupal (Twig)"]
+      "keywords": [
+        "Laravel (Inertia, Blade)",
+        "WordPress (ACF, Gutenberg, WooCommerce)",
+        "Drupal (Twig)"
+      ]
     },
     {
       "name": "Side projects",
-      "keywords": ["PostgreSQL", "Prisma", "Supabase", "Redis", "Socket.io", "Stripe"]
+      "keywords": [
+        "PostgreSQL",
+        "Prisma",
+        "Supabase",
+        "Redis",
+        "Socket.io",
+        "Stripe"
+      ]
     },
     {
       "name": "AI-assisted development",
-      "keywords": ["Claude Code (subagents, skills, hooks)", "Codex review", "Google Gemini API"]
+      "keywords": [
+        "Claude Code (subagents, skills, hooks)",
+        "Codex review",
+        "Google Gemini API"
+      ]
     }
   ],
   "education": [
@@ -239,7 +364,13 @@
     }
   ],
   "languages": [
-    { "language": "Thai", "fluency": "Native" },
-    { "language": "English", "fluency": "Professional working proficiency" }
+    {
+      "language": "Thai",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    }
   ]
 }

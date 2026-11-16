@@ -8,7 +8,6 @@
     "preview": "SKIP_PDF=1 node scripts/build.js && open site/index.html"
   },
   "devDependencies": {
-    "jsonresume-theme-even": "^0.26.1",
     "puppeteer": "^24.43.1",
     "resumed": "^6.1.0"
   },

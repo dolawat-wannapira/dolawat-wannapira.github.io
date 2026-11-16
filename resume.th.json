@@ -35,6 +35,12 @@
         "สร้าง frontend ของศูนย์เอกสารที่ใช้ร่วมกันทุกผลิตภัณฑ์: โฟลเดอร์ ขั้นตอนตรวจและอนุมัติ 3 ขั้นพร้อมลายเซ็น ประวัติเวอร์ชัน และ audit trail แล้วฝังเข้าไปในหน้าฟีเจอร์ของ 4 ผลิตภัณฑ์",
         "ทำ role แบบอ่านอย่างเดียว (Viewer) ให้ทั้ง 5 ผลิตภัณฑ์ (ล็อก input ระดับ theme และ write guard ฝั่ง client) และแก้ช่องโหว่ stored XSS ระดับ High จากการตรวจความปลอดภัย",
         "นำ Vitest เข้ามาใช้ (เป็นคนเพิ่ม test file ฝั่ง frontend 296 จาก 323 ไฟล์) เพิ่ม Playwright spec 36 จาก 46 ไฟล์ และอัปเกรด MUI จาก v7 เป็น v9 แบบเป็นขั้นตอนโดยไม่มี TypeScript error ใหม่"
+      ],
+      "keywords": [
+        "React",
+        "TypeScript",
+        "MUI",
+        "Inertia"
       ]
     },
     {
@@ -48,6 +54,12 @@
         "สร้างหน้าบริหารงานภายใน: แดชบอร์ด retainer พร้อม KPI tile และ Gantt timeline การวางแผนทรัพยากร รายงานเวลาทำงาน activity log และรายงาน health check ของโปรเจกต์",
         "สร้างเครื่องมือ link building: พอร์ต backlink และ paid link การจัดการผู้ขายและเว็บ directory การอัปเดตราคาแบบ bulk การอัปโหลด CSV/Excel พร้อม preview และใบแจ้งหนี้ของผู้ขาย",
         "ย้าย build ไปใช้ Vite, migrate Inertia จาก 0.x เป็น v3 ในประมาณ 80 ไฟล์, แทน Cypress spec ที่ไม่ได้ใช้ด้วย Vitest browser mode 32 ไฟล์ที่รันใน CI และกำจัดช่องโหว่ระดับ critical จาก npm audit"
+      ],
+      "keywords": [
+        "Vue 3",
+        "Vuetify",
+        "Tailwind",
+        "Inertia"
       ]
     },
     {
@@ -62,6 +74,12 @@
         "สร้างชุด component กลาง (input, select, ตารางข้อมูลที่เรียงลำดับได้, card, badge, toast) พร้อม Storybook story และส่วนจัดการผู้ใช้ที่มีการเชิญและกฎของ role",
         "สร้างหน้ารายงานสำหรับพิมพ์ที่ backend แปลงเป็น PDF รวมถึงแดชบอร์ดด้วย Chart.js, analytics event และ cookie consent",
         "ย้าย build จาก Laravel Mix ไปใช้ Vite และเพิ่ม Cypress end-to-end spec ส่วนใหญ่"
+      ],
+      "keywords": [
+        "Vue 3",
+        "Pinia",
+        "Tailwind",
+        "Storybook"
       ]
     },
     {
@@ -76,6 +94,11 @@
         "สร้าง audio editor บนเบราว์เซอร์ด้วย wavesurfer.js สำหรับตัดช่วงเสียงออกจากตอนและกำหนดจุดโฆษณา และทำให้ editor จุดโฆษณาเร็วขึ้นด้วย waveform ที่คำนวณไว้ล่วงหน้าพร้อม fallback สำหรับ iOS",
         "ทำการตั้งค่า export ไป YouTube, ตอนแบบส่วนตัวที่เข้าได้ผ่านลิงก์, การสวมสิทธิ์ผู้ใช้สำหรับ admin และ cookie consent ที่โหลด tag management หลังผู้ใช้ยินยอมเท่านั้น",
         "สร้างหน้า blog ของพอดแคสต์สาธารณะ และปรับดีไซน์อีเมลแจ้งเตือนกับอีเมลสรุป analytics รายเดือนด้วย Laravel Blade"
+      ],
+      "keywords": [
+        "Angular",
+        "NgRx",
+        "wavesurfer.js"
       ]
     },
     {
@@ -89,6 +112,11 @@
         "ปรับฟอร์มแจ้งเคลมแบบหลายขั้นตอนและแท็บโหมดแก้ไขให้รองรับเคสประเภทใหม่ ด้วย reactive form แบบมีเงื่อนไขสำหรับไฟแนนซ์ ประกันภัย ข้อมูลลูกค้า และคู่กรณี",
         "สร้างแท็บบัญชี: ตารางใบแจ้งหนี้ที่แก้ไขได้ เพิ่มแถวได้ มียอดรวม อัปโหลดใบแจ้งหนี้ได้ และบันทึกอัตโนมัติแบบ debounce โดยมี NgRx feature ใหม่รองรับ",
         "เพิ่มสัญญาณสถานะเคสทั่วทั้งแอป: ไอคอนสถานะในรายการ ตัวนับเคส escalation และเครื่องหมายบอกช่องบังคับที่ยังไม่กรอกในแต่ละแท็บ"
+      ],
+      "keywords": [
+        "Angular",
+        "NgRx",
+        "Angular Material"
       ]
     },
     {
@@ -102,6 +130,11 @@
         "สร้าง widget เป็น bundle เดียวแบบ UMD/ES พร้อม script tag และ JavaScript API (init, open, close, updateSettings, destroy)",
         "แยก widget ออกจาก CSS ของเว็บที่ฝังด้วยการ render ใน Shadow DOM และ inject style เอง จึงฝังในเว็บ Drupal และ WordPress ได้โดย style ไม่ชนกัน",
         "เชื่อมแชทกับ REST API ของ backend AI (conversation token, page context, คำตอบแบบ Markdown) และสร้างฟอร์มเก็บ lead ในแชทพร้อม GDPR consent สำหรับคำถามด้านการขาย"
+      ],
+      "keywords": [
+        "React 19",
+        "Vite",
+        "Shadow DOM"
       ]
     },
     {
@@ -115,6 +148,11 @@
         "สร้างโมดูล SMS โปรโมชัน: หน้าเขียนข้อความพร้อมตัวกรองกลุ่มเป้าหมาย ตัวนับ 160 ตัวอักษรที่เผื่อพื้นที่ให้ placeholder สำหรับข้อความเฉพาะบุคคล และหน้าภาพรวมแคมเปญ",
         "ปรับแผนที่ supply และ demand บน Google Maps ให้มี marker แยกประเภท clustering หน้าต่างข้อมูลที่ลิงก์ไปยังโปรไฟล์ และคำอธิบายสัญลักษณ์",
         "เพิ่มตารางการจองที่แบ่งหน้าและเรียงลำดับได้ในหน้าลูกค้า หมอนวด และพาร์ทเนอร์ และหน้า admin สำหรับตั้งเวลาให้บริการตามพื้นที่ที่แอปจองนำไปใช้"
+      ],
+      "keywords": [
+        "Nuxt 2",
+        "TypeScript",
+        "Vuetify"
       ]
     },
     {
@@ -129,7 +167,13 @@
         "Design system บน Drupal: สร้าง component ที่ใช้ซ้ำได้ 26 ตัวด้วย Twig/SCSS พร้อม Storybook story ให้เว็บไซต์หลายภูมิภาคของผู้ผลิตรายหนึ่งภายใน 6 สัปดาห์",
         "ต้นแบบแบบทดสอบการโฟกัสของสายตา (Nuxt, TypeScript): สร้างเว็บแอปบนมือถือคนเดียวในประมาณ 2 สัปดาห์ ใช้ motion sensor ของโทรศัพท์จับเวลาว่าสายตาปรับโฟกัสระหว่างใกล้และไกลได้เร็วแค่ไหน",
         "WordPress: ดูแลเว็บไซต์ของเอเจนซีเป็นเวลา 3 ปี (block ด้วย ACF/Gutenberg, slider หน้า careers, แก้ layout shift) และทำ style ของ section ต่าง ๆ ให้ร้านค้า WooCommerce ของลูกค้า"
-      ]
+      ],
+      "keywords": [
+        "Nuxt",
+        "Drupal",
+        "WordPress"
+      ],
+      "x-timeline": false
     },
     {
       "name": "Wolves Corporation",
@@ -143,6 +187,10 @@
         "ทำงานในระบบ back office ด้านโลจิสติกส์ สำหรับจัดการเส้นทาง ลูกค้า รถ คนขับ ใบแจ้งหนี้ และการชำระเงิน",
         "ทำงานในเว็บร้านค้าออนไลน์ ที่มีระบบจัดการสินค้า การชำระเงิน ข้อมูลผู้ขายและผู้ซื้อ และระบบติดตามพัสดุ",
         "ทำงานในเว็บไซต์โรงเรียน และแอปภายในสำหรับจัดการงานและติดตามเวลาทำงาน"
+      ],
+      "keywords": [
+        "PHP",
+        "jQuery"
       ]
     }
   ],
@@ -159,7 +207,17 @@
         "วาง workflow แบบ AI-assisted: orchestrator ของ Claude Code ที่ส่งงานต่อให้ subagent แยกตาม layer, rule ตาม path, project skill, git-guard hook, issue ที่เขียนให้ agent ทำต่อได้ และ invariant test ใน CI",
         "ทำ Stripe subscription ที่รองรับ PromptPay, พื้นที่โฆษณาที่ปิดได้ทันทีด้วย kill switch, ระบบแบนผู้ใช้, การตรวจจับหลายบัญชี และการลบบัญชีด้วยตัวเอง"
       ],
-      "keywords": ["SvelteKit", "Svelte 5", "TypeScript", "PostgreSQL", "Prisma", "Redis", "Socket.io", "Stripe", "Claude Code"]
+      "keywords": [
+        "SvelteKit",
+        "Svelte 5",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "Redis",
+        "Socket.io",
+        "Stripe",
+        "Claude Code"
+      ]
     },
     {
       "name": "Marketplace วิดีโอจากครีเอเตอร์",
@@ -172,7 +230,16 @@
         "สร้างแกนหลักของระบบชำระเงิน: Stripe webhook แบบ idempotent, escrow ที่เก็บในฐานข้อมูลพร้อม job ปล่อยเงิน, การคืนเงินอัตโนมัติตาม SLA และราคาหลายสกุลเงิน",
         "สร้าง pipeline วิดีโอ (อัปโหลดตรงจากเบราว์เซอร์, signed playback, queue worker ที่ใช้ ffmpeg) บน Postgres migration 78 ไฟล์พร้อม test ของ row-level security"
       ],
-      "keywords": ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Stripe", "Tailwind", "shadcn/ui"]
+      "keywords": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Supabase",
+        "PostgreSQL",
+        "Stripe",
+        "Tailwind",
+        "shadcn/ui"
+      ]
     },
     {
       "name": "PWA คอนเทนต์ไลฟ์สไตล์ของบริษัทประกันชีวิต",
@@ -184,7 +251,13 @@
         "สร้างระบบค้นหาครบทั้ง flow: overlay ค้นหาแบบเต็มจอพร้อมประวัติการค้นหา autocomplete จาก tag และหน้าผลลัพธ์ที่ render ฝั่ง server",
         "สร้างหน้า bookmark ด้วย SWR หน้า browse บน headless CMS คำทักทายพร้อมสภาพอากาศตามตำแหน่ง และ dialog สมัครรับจดหมายข่าวที่เคารพ cookie consent"
       ],
-      "keywords": ["Next.js", "React", "SWR", "PWA", "SCSS"]
+      "keywords": [
+        "Next.js",
+        "React",
+        "SWR",
+        "PWA",
+        "SCSS"
+      ]
     },
     {
       "name": "เว็บติดตามร่างกฎหมาย",
@@ -196,37 +269,89 @@
         "สร้างหน้าสำรวจร่างกฎหมายโดยปรับหน้าสำรวจนโยบายเดิมให้รองรับ data model ใหม่ที่มีหมวดหมู่ สถานะ ไทม์ไลน์ และลิงก์",
         "ทำให้เว็บ static แสดงข้อมูลล่าสุดได้โดยไม่ต้อง rebuild ด้วยการโหลดไฟล์ข้อมูลที่ sync ทุกชั่วโมงตอน runtime และแก้ปัญหาที่ Lighthouse พบใน component กลาง"
       ],
-      "keywords": ["Nuxt", "Vue", "TypeScript", "Tailwind"]
+      "keywords": [
+        "Nuxt",
+        "Vue",
+        "TypeScript",
+        "Tailwind"
+      ]
     }
   ],
   "skills": [
     {
       "name": "Front end",
-      "keywords": ["TypeScript", "JavaScript", "React", "Next.js", "Vue 3", "Nuxt", "Angular", "Svelte", "SvelteKit", "HTML", "CSS / SCSS"]
+      "keywords": [
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Vue 3",
+        "Nuxt",
+        "Angular",
+        "Svelte",
+        "SvelteKit",
+        "HTML",
+        "CSS / SCSS"
+      ]
     },
     {
       "name": "State และข้อมูล",
-      "keywords": ["Inertia.js", "NgRx", "Pinia", "Vuex", "SWR"]
+      "keywords": [
+        "Inertia.js",
+        "NgRx",
+        "Pinia",
+        "Vuex",
+        "SWR"
+      ]
     },
     {
       "name": "UI",
-      "keywords": ["Tailwind CSS", "MUI", "Vuetify", "Angular Material", "shadcn/ui", "Storybook"]
+      "keywords": [
+        "Tailwind CSS",
+        "MUI",
+        "Vuetify",
+        "Angular Material",
+        "shadcn/ui",
+        "Storybook"
+      ]
     },
     {
       "name": "Testing และเครื่องมือ",
-      "keywords": ["Vitest", "Playwright", "Cypress", "Vite", "Webpack", "Sentry"]
+      "keywords": [
+        "Vitest",
+        "Playwright",
+        "Cypress",
+        "Vite",
+        "Webpack",
+        "Sentry"
+      ]
     },
     {
       "name": "แพลตฟอร์ม",
-      "keywords": ["Laravel (Inertia, Blade)", "WordPress (ACF, Gutenberg, WooCommerce)", "Drupal (Twig)"]
+      "keywords": [
+        "Laravel (Inertia, Blade)",
+        "WordPress (ACF, Gutenberg, WooCommerce)",
+        "Drupal (Twig)"
+      ]
     },
     {
       "name": "โปรเจกต์ส่วนตัว",
-      "keywords": ["PostgreSQL", "Prisma", "Supabase", "Redis", "Socket.io", "Stripe"]
+      "keywords": [
+        "PostgreSQL",
+        "Prisma",
+        "Supabase",
+        "Redis",
+        "Socket.io",
+        "Stripe"
+      ]
     },
     {
       "name": "พัฒนาด้วย AI",
-      "keywords": ["Claude Code (subagents, skills, hooks)", "Codex review", "Google Gemini API"]
+      "keywords": [
+        "Claude Code (subagents, skills, hooks)",
+        "Codex review",
+        "Google Gemini API"
+      ]
     }
   ],
   "education": [
@@ -239,7 +364,13 @@
     }
   ],
   "languages": [
-    { "language": "ภาษาไทย", "fluency": "ภาษาแม่" },
-    { "language": "ภาษาอังกฤษ", "fluency": "ใช้ในการทำงานได้อย่างมืออาชีพ" }
+    {
+      "language": "ภาษาไทย",
+      "fluency": "ภาษาแม่"
+    },
+    {
+      "language": "ภาษาอังกฤษ",
+      "fluency": "ใช้ในการทำงานได้อย่างมืออาชีพ"
+    }
   ]
 }

@@ -1,4 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0073aa"/>
-  <text x="32" y="43" fill="#fff" font-family="Lato, 'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle" letter-spacing="-1">DW</text>
+	<title>&lt;/DW&gt;</title>
+	<rect width="64" height="64" rx="14" fill="#2f54eb" />
+	<g
+		transform="translate(32 32) scale(.8) translate(-35.5 -32)"
+		fill="none"
+		stroke="#fff"
+		stroke-width="4"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+	>
+		<path d="M10 24 4 32l6 8" />
+		<path d="M17 41 22 23" />
+		<path d="M28 24h2a6.5 8 0 0 1 0 16h-2z" />
+		<path d="m43 24 3 16 3-10 3 10 3-16" />
+		<path d="m61 24 6 8-6 8" />
+	</g>
 </svg>
