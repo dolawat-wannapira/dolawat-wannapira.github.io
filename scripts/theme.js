@@ -2,7 +2,8 @@
 // - screen: direction A, a big name, a fact strip, a timeline of every project from the first
 //   start to now, and expandable index rows;
 // - print (Ctrl+P and the downloadable PDF): the classic layout after the owner's old CV, a centred
-//   header, uppercase icon headings over a rule, dates in a left column and dash bullets.
+//   header and uppercase icon headings over a rule, condensed to one A4 page: the short intro, and
+//   one short paragraph per entry with its dates on the right.
 // Each layout's CSS sits in its own media block, so they never share rules. Light theme only.
 // Latin text is set in Bricolage Grotesque; Thai falls through to Google Sans, whose font file
 // covers Thai only.
@@ -13,9 +14,9 @@
 // - `x-short`: the timeline bar's label, a part of the full name so the bar's accessible name (the
 //   full name) still contains what it shows;
 // - `x-headline`: one line under a closed index row's name, so a skimmer sees the result unopened;
-// - `x-print-skip`: highlight numbers (1-based) left out of print and the PDF, which has to fit three
-//   pages; the screen still shows every highlight;
-// - `x-lede` on basics: the screen's short intro (see lede());
+// - `x-print`: the entry's text in print and the PDF, which has to fit one page, in place of the
+//   summary and highlights the screen shows;
+// - `x-lede` on basics: the short intro, on screen (see lede()) and in print;
 // - `x-stack` on basics: the main stack, shown in the fact strip.
 
 const icons = {
@@ -57,7 +58,6 @@ const slug = (text) => text.toLowerCase().replace(/[^a-z0-9฀-๿]+/g, '-').rep
 // "A · B · C" as separate spans, so a wrapped line never ends or starts on a "·" (see .seq).
 const seq = (list) => `<span class="seq">${list.split(' · ').map((s) => `<span>${escape(s)}</span>`).join(' ')}</span>`
 const dashList = (items = []) => (items.length ? `<ul class="dash">${items.map((item) => `<li>${escape(item)}</li>`).join('')}</ul>` : '')
-const printed = (entry) => (entry.highlights ?? []).filter((_, i) => !(entry['x-print-skip'] ?? []).includes(i + 1))
 
 // Newest first, the way a CV reads: ongoing entries lead, then the rest by start date, latest first.
 // Ties keep the JSON order.
@@ -426,24 +426,28 @@ function classic(resume, { labels }) {
   ].filter(Boolean)
   const section = (id, iconName, title, body) => `<section id="c-${id}"><h2>${icon(iconName)}<span>${escape(title)}</span></h2>${body}</section>`
 
+  // A heading line: the text on the left, its dates on the right.
+  const head = (tag, html, when) => `<${tag} class="head"><span>${html}</span><span class="when">${when}</span></${tag}>`
   const educationBody = education
-    .map((e) => `<div class="row"><div class="body"><p><strong>${escape(e.studyType)} – ${escape(e.area)},</strong> <em>${escape(e.institution)}</em></p></div><p class="when">${date(e.startDate)} – ${date(e.endDate)}</p></div>`)
+    .map((e) => head('p', `<strong>${escape(e.studyType)} – ${escape(e.area)},</strong> <em>${escape(e.institution)}</em>`, `${date(e.startDate)} – ${date(e.endDate)}`))
     .join('')
+  const text = (e) => `<p>${escape(e['x-print'] ?? e.summary ?? e.description)}</p>`
+  // An employer with a single entry takes that entry's text directly, as its heading would repeat
+  // the employer's dates.
   const workBody = groupWork(work)
-    .map(
-      (g) => `<article class="row employer"><div class="body">
-    <h3><strong>${escape(g.name)},</strong> <em>${escape(g.title)}</em></h3>
-    ${g.entries.map((e) => `<div class="entry"><h4>${escape(e.position)} <span class="dates">${span(e.startDate, e.endDate, labels.present)}</span></h4>${e.summary ? `<p>${escape(e.summary)}</p>` : ''}${dashList(printed(e))}</div>`).join('')}
-  </div><p class="when">${span(g.start, g.end, labels.present)}</p></article>`,
-    )
+    .map((g) => {
+      const employer = head('h3', `<strong>${escape(g.name)},</strong> <em>${escape(g.title)}</em>`, span(g.start, g.end, labels.present))
+      return g.entries.length === 1
+        ? `<article class="entry">${employer}${text(g.entries[0])}</article>`
+        : `<article class="employer">${employer}
+    ${g.entries.map((e) => `<div class="entry">${head('h4', escape(e.position), span(e.startDate, e.endDate, labels.present))}${text(e)}</div>`).join('')}
+  </article>`
+    })
     .join('')
   const projectsBody = [...projects]
     .sort(byRecency)
     .map(
-      (p) => `<article class="row"><div class="body">
-    <h3><strong>${escape(p.name)},</strong> <em>${escape(p.type)}</em>${p.url ? ` <a class="url" href="${escape(p.url)}">${escape(displayUrl(p.url))}</a>` : ''}</h3>
-    <p>${escape(p.description)}</p>${dashList(printed(p))}${p.keywords?.length ? `<p class="stack">${escape(p.keywords.join(' · '))}</p>` : ''}
-  </div><p class="when">${span(p.startDate, p.endDate, labels.present)}</p></article>`,
+      (p) => `<article class="entry">${head('h3', `<strong>${escape(p.name)},</strong> <em>${escape(p.type)}</em>${p.url ? ` <a class="url" href="${escape(p.url)}">${escape(displayUrl(p.url))}</a>` : ''}`, span(p.startDate, p.endDate, labels.present))}${text(p)}</article>`,
     )
     .join('')
 
@@ -453,12 +457,14 @@ function classic(resume, { labels }) {
   <p class="label">${escape(basics.label)}</p>
   <ul class="contacts">${contacts.map((c) => `<li>${icon(c.icon)}${c.href ? `<a href="${escape(c.href)}">${escape(c.text)}</a>` : escape(c.text)}</li>`).join('')}</ul>
 </header>
-${section('summary', 'summary', labels.summary, `<p class="summary">${escape(basics.summary)}</p>`)}
+${section('summary', 'summary', labels.summary, `<p class="summary">${escape(basics['x-lede'] ?? basics.summary)}</p>`)}
 ${section('work', 'briefcase', labels.work, workBody)}
 ${section('projects', 'folder', labels.projects, projectsBody)}
-${section('skills', 'code', labels.skills, `<div class="skills">${skills.map((s) => `<div><h3>${s.name.split(' ').map((w) => `<span class="nw">${escape(w)}</span>`).join(' ')}</h3><p>${escape(s.keywords.join(', '))}</p></div>`).join('')}</div>`)}
+${section('skills', 'code', labels.skills, `<p class="skills">${skills.map((s) => `<strong>${escape(s.name)}:</strong> ${escape(s.keywords.join(', '))}`).join('<span class="sep" aria-hidden="true"> · </span>')}</p>`)}
+<div class="pair">
 ${section('education', 'education', labels.education, educationBody)}
 ${section('languages', 'globe', labels.languages, `<p class="languages">${languages.map((l) => `${escape(l.language)} (${escape(l.fluency)})`).join(' · ')}</p>`)}
+</div>
 </article>`
 }
 
@@ -706,46 +712,40 @@ ${labelOutside}
 }
 `
 
+// One A4 page, with little to spare: the Thai PDF (taller lines) is the one that overflows first, so
+// check its page count after any change to the print text (`x-print`, `x-lede`, skills).
 const printStyles = `
-@page{size:A4;margin:9mm 11mm}
+@page{size:A4;margin:7mm 10mm}
 @media print{
 .screen{display:none}
-html{font-size:9.25pt}
+html{font-size:8.75pt}
 body{background:var(--card);line-height:1.3}
-body:lang(th){line-height:1.45}
+body:lang(th){line-height:1.36}
 .classic .masthead{text-align:center}
-.classic .masthead h1{font-size:22pt;font-weight:800;line-height:1.1;letter-spacing:-.01em}
-.classic .label{font-size:13pt;font-style:italic;color:var(--accent)}
-.classic .contacts{list-style:none;padding:0;margin-top:.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem 1.25rem;font-size:.92rem}
+.classic .masthead h1{font-size:20pt;font-weight:800;line-height:1.1;letter-spacing:-.01em}
+.classic .label{font-size:12pt;font-style:italic;color:var(--accent)}
+.classic .contacts{list-style:none;padding:0;margin-top:.4rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem 1rem;font-size:.9rem}
 .classic .contacts li{display:inline-flex;align-items:center;gap:.4rem}
-.classic section{margin-top:.85rem}
+.classic section{margin-top:.6rem}
 .classic section>h2{display:flex;align-items:center;gap:.5rem;padding-bottom:.2rem;border-bottom:2px solid var(--ink);font-size:.95rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 .classic:lang(th) section>h2{letter-spacing:.02em}
 .classic section>h2 .icon{width:1.05em;height:1.05em}
-.classic .summary{margin-top:.6rem}
-.classic .row{display:grid;grid-template-columns:8.5rem minmax(0,1fr);column-gap:1.25rem;margin-top:.45rem}
-.classic .row .body{grid-column:2;grid-row:1}
-.classic .row .when{grid-column:1;grid-row:1;white-space:nowrap}
-.classic .row h3{font-size:1rem;font-weight:400}
-.classic .row h3 strong{font-weight:700}
-.classic .row .url{margin-left:.35rem;font-size:.9rem}
-.classic .row p{margin-top:.15rem}
-.classic .employer+.employer{margin-top:.7rem}
-.classic .entry{margin-top:.4rem}
-.classic .entry h4{font-size:1rem;font-weight:700}
-.classic .dates{margin-left:.4rem;font-weight:400;font-size:.88rem;color:var(--muted)}
-.classic .dash{padding-left:1.1rem;margin-top:.2rem;list-style-type:"-  "}
-.classic .dash li+li{margin-top:.1rem}
-.classic .stack{color:var(--muted);font-size:.9rem}
-/* Skill groups sit on the rows' grid, the group name in the date column: one line or two per group
-   at full width, where a three-column grid wrapped every cell to three. */
-.classic .skills{margin-top:.25rem}
-.classic .skills>div{display:grid;grid-template-columns:8.5rem minmax(0,1fr);column-gap:1.25rem;margin-top:.2rem}
-.classic .skills h3{font-size:1rem;font-weight:700}
-.classic .nw{white-space:nowrap}
-.classic .skills p{margin:0}
-.classic .languages{margin-top:.45rem}
-.classic section>h2,.classic .row h3,.classic .entry h4{break-after:avoid}
-.classic li,.classic .skills>div,#c-education .row,#c-languages{break-inside:avoid}
+.classic .summary,.classic .languages{margin-top:.4rem}
+/* Every entry's heading line: name on the left, dates on the right. */
+.classic .head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;font-size:1rem;font-weight:400}
+.classic .head strong,.classic h4.head{font-weight:700}
+.classic .when{flex:none;font-weight:400;font-size:.92rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.classic .url{margin-left:.35rem;font-size:.9rem}
+.classic .employer,.classic .entry,#c-education .head{margin-top:.3rem}
+.classic .employer .entry{margin-top:.25rem;padding-left:.9rem;border-left:2px solid var(--line)}
+.classic .entry p{margin-top:.05rem;color:var(--ink-2)}
+/* Skill groups run on as one paragraph, a group name in bold before its keywords. */
+.classic .skills{margin-top:.3rem}
+.classic .skills strong{font-weight:700}
+.classic .sep{padding:0 .2rem;color:var(--muted)}
+/* Education and languages share the last row, side by side. */
+.classic .pair{display:grid;grid-template-columns:auto auto;column-gap:2rem}
+.classic section>h2,.classic .head{break-after:avoid}
+.classic .entry{break-inside:avoid}
 }
 `

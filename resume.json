@@ -32,6 +32,7 @@
       "position": "Compliance Management Platform (B2B SaaS)",
       "startDate": "2023-09",
       "summary": "A multi-tenant SaaS that helps German companies run data-protection, occupational-safety, information-security, works-council and AI-compliance processes in one place. Laravel + Inertia with a React, TypeScript and MUI frontend; I wrote about three quarters of all frontend commits.",
+      "x-print": "Multi-tenant compliance SaaS for German companies (React, TypeScript, MUI, Inertia); about three quarters of frontend commits. Built multi-step workflows, a shared document center and a Viewer role; added 296 of 323 test files.",
       "highlights": [
         "Built the UI for long multi-step compliance workflows (GDPR processing activities, data-protection impact assessments, risk assessments, accident reports, works-council meetings) and wrote many of their server-side PDF exports.",
         "Built the frontend of a document center shared by all products: folders, a three-step review and approval with signatures, version history and an audit trail, embedded into feature pages across four products.",
@@ -53,6 +54,7 @@
       "position": "SEO Agency Operations Platform",
       "startDate": "2022-01",
       "summary": "An internal platform where an agency's SEO team runs client projects, buys and tracks backlinks, plans resources and reports on retainers, plus a dashboard for the agency's customers. Laravel + Inertia with Vue 3, Vuetify and Tailwind; I wrote about 83% of all frontend commits.",
+      "x-print": "Internal platform and customer dashboard for an SEO agency (Vue 3, Vuetify, Tailwind, Inertia); about 83% of frontend commits. Built the SEO dashboard, retainer views and link-building tools; moved the build to Vite.",
       "highlights": [
         "Built the customer-facing SEO dashboard (project overview, keyword rankings, Google traffic, backlinks, page health and KPI charts) on top of data services built by teammates.",
         "Built the internal management views: a retainer dashboard with KPI tiles and a Gantt timeline, resource planning, time reporting, an activity log and a project health-check report.",
@@ -75,14 +77,12 @@
       "startDate": "2022-06",
       "endDate": "2023-07",
       "summary": "An internal app where a global optics brand's staff score how well thousands of partner stores show up online and track the scores over time. Laravel + Inertia with Vue 3, Pinia and Tailwind; I wrote about 70% of frontend commits in the first build year.",
+      "x-print": "Internal app where a global optics brand scores thousands of partner stores (Vue 3, Pinia, Tailwind); about 70% of first-year frontend commits. Built the autosaving questionnaire and a Storybook component set.",
       "highlights": [
         "Built the store-assessment questionnaire: yes/no, rating and value questions per channel, debounced autosave with a live score, per-country hidden questions and override states for answers filled from scraping APIs.",
         "Built the shared component set (inputs, selects, a sortable data table, cards, badges, toasts) with Storybook stories, and the user-management area with invitations and role rules.",
         "Built the printable report page that the backend turns into a PDF, plus Chart.js dashboards, analytics events and cookie consent.",
         "Migrated the build from Laravel Mix to Vite and added most of the Cypress end-to-end specs."
-      ],
-      "x-print-skip": [
-        4
       ],
       "keywords": [
         "Vue 3",
@@ -100,14 +100,12 @@
       "startDate": "2020-11",
       "endDate": "2021-11",
       "summary": "A subscription platform where podcasters publish episodes, edit audio in the browser, set dynamic-ad breakpoints and get analytics and a public podcast site. Angular + NgRx frontend on a Laravel API; from April 2021 I was the only front-end developer on it.",
+      "x-print": "Subscription platform for podcasters (Angular, NgRx); the only front-end developer from April 2021. Built the checkout with PayPal and 3-D Secure card payments and an in-browser audio editor on wavesurfer.js.",
       "highlights": [
         "Built the subscription checkout end to end on the frontend: plan stepper, PayPal and credit-card payments with 3-D Secure and saved payment methods, discount codes, invoices and overdue and cancellation states.",
         "Built an in-browser audio editor on wavesurfer.js for cutting regions from an episode and marking ad breaks, and sped up the ad-breakpoint editor with pre-computed waveforms and an iOS fallback.",
         "Shipped YouTube export settings, link-only private episodes, admin impersonation and a cookie consent that loads tag management only after opt-in.",
         "Built the public podcast blog pages and restyled the transactional and monthly analytics emails in Laravel Blade."
-      ],
-      "x-print-skip": [
-        4
       ],
       "keywords": [
         "Angular",
@@ -124,6 +122,7 @@
       "startDate": "2022-03",
       "endDate": "2022-06",
       "summary": "An internal app where a car dealership group's staff, assessors and lawyers handle accident damage cases end to end. Angular, NgRx and Angular Material; I ran its frontend on my own in 2022, on a codebase teammates built in 2020–21.",
+      "x-print": "A car dealership group's internal claims app (Angular, NgRx, Angular Material); ran its frontend on my own in 2022. Reworked the claim intake wizard and built the accounting tab with an editable invoice table.",
       "highlights": [
         "Reworked the multi-step claim intake wizard and its edit-mode tabs for a new case type, with conditional reactive forms for financing, insurance, customer data and accident parties.",
         "Built the accounting tab: an editable invoice table with dynamic rows, sums, invoice upload and debounced autosave, backed by a new NgRx feature.",
@@ -144,6 +143,7 @@
       "startDate": "2024-11",
       "endDate": "2025-07",
       "summary": "A drop-in AI chat assistant that any website adds with one script tag, with a white-labelled variant running on an international manufacturer's website. React 19 and Vite library mode; I wrote about 79% of the commits.",
+      "x-print": "A drop-in AI chat assistant added with one script tag (React 19, Vite library mode); about 79% of commits. Built it as one bundle with a JavaScript API, isolated from host-site CSS in a Shadow DOM.",
       "highlights": [
         "Built the widget as a single UMD/ES bundle with a script-tag and JavaScript API (init, open, close, updateSettings, destroy).",
         "Isolated it from host-site CSS by rendering inside a Shadow DOM with injected styles, so it drops into Drupal and WordPress sites without style clashes.",
@@ -164,6 +164,7 @@
       "startDate": "2021-08",
       "endDate": "2022-05",
       "summary": "A Thai wellness service where customers book a massage therapist to their home, hotel or office. I built features for the Nuxt 2, TypeScript and Vuetify admin back office and the booking web app.",
+      "x-print": "On-demand massage booking service (Nuxt 2, TypeScript, Vuetify). Built a promotional SMS composer, a supply-and-demand map on Google Maps and sortable booking tables for the admin back office.",
       "highlights": [
         "Built the promotional SMS module: a composer with target filters, a 160-character counter that reserves space for personalisation placeholders, and campaign overview pages.",
         "Improved the supply-and-demand map on Google Maps with typed markers, clustering, info windows linking to profiles and a legend.",
@@ -184,14 +185,12 @@
       "startDate": "2021-10",
       "endDate": "2025-06",
       "summary": "Short builds and maintenance for agency clients and the agency itself.",
+      "x-print": "A music campaign microsite with in-browser vocal recording (Nuxt), 26 Drupal Twig/SCSS components with Storybook in six weeks, a motion-sensor eye-focus test prototype and the agency's WordPress site.",
       "highlights": [
         "Music campaign microsite (Nuxt, TypeScript): built most of a mobile-first site where fans recorded vocals in the browser and submitted them, including the age gate and the upload flow, in about seven weeks with one other developer.",
         "Drupal design system: built 26 reusable Twig/SCSS components with Storybook stories for a multi-region manufacturer website in six weeks.",
         "Eye-focus test prototype (Nuxt, TypeScript): built a mobile web app on my own in about two weeks that uses the phone's motion sensors to time how fast the eyes refocus between near and far.",
         "WordPress: maintained the agency's own website for three years (ACF/Gutenberg blocks, a careers slider, layout-shift fixes) and styled sections for client WooCommerce shops."
-      ],
-      "x-print-skip": [
-        4
       ],
       "keywords": [
         "Nuxt",
@@ -208,14 +207,12 @@
       "startDate": "2018-01",
       "endDate": "2020-10",
       "summary": "Client and internal web apps built on the company's in-house PHP + jQuery framework.",
+      "x-print": "Worked on client and internal web apps on an in-house PHP + jQuery framework: a clinic management system, logistics back offices, online shops and a task-tracking app.",
       "highlights": [
         "Worked on a clinic management system: supply inventory, appointment scheduling and a 3D body model for marking symptoms.",
         "Worked on logistics back offices for routes, clients, vehicles, drivers, invoices and payments.",
         "Worked on online shops with product management, payments, seller and buyer data and cargo tracking.",
         "Worked on a school website and an internal task-management and time-tracking app."
-      ],
-      "x-print-skip": [
-        4
       ],
       "keywords": [
         "PHP",
@@ -231,6 +228,7 @@
       "type": "Personal project",
       "startDate": "2026-02",
       "description": "A Thai football community with a forum, AI-curated and translated news, live scores and standings, match predictions, real-time chat and paid supporter tiers. I designed, built and run it solo; it reached production about 11 weeks after the first commit.",
+      "x-print": "Thai football community with a forum, AI-translated news, live scores, real-time chat and paid tiers (SvelteKit, PostgreSQL, Stripe); designed, built and run solo with a Claude Code workflow, live about 11 weeks after the first commit.",
       "highlights": [
         "Built an AI news pipeline that ingests RSS sources, de-duplicates in two stages, then scores and translates stories into Thai with Google Gemini; batching cut scoring input tokens by about 70%.",
         "Integrated a football data API through a quota-aware sync scheduler that powers live scores, standings, knockout brackets, team pages and a season-long prediction game.",
@@ -257,6 +255,7 @@
       "startDate": "2026-05",
       "endDate": "2026-06",
       "description": "A bilingual (Thai/English) marketplace MVP where fans book personalized short videos from creators, with a booking flow, a creator dashboard and an operator admin panel. I built it solo with an AI-assisted workflow in about five weeks; it was deployed for client testing, and development stopped before a confirmed public launch.",
+      "x-print": "Bilingual marketplace MVP for personalized creator videos (Next.js, Supabase, Stripe), built solo in about five weeks: the requirements, Stripe escrow with SLA-based refunds and an ffmpeg video pipeline.",
       "highlights": [
         "Wrote the requirements (proposal, BRD, SRS) and handled 20 dated client change requests, including a switch to manual payouts and to a hosted video service mid-project.",
         "Built the payment core: idempotent Stripe webhooks, escrow held in the database with a release job, SLA-based automatic refunds and multi-currency pricing.",
@@ -281,6 +280,7 @@
       "startDate": "2021-04",
       "endDate": "2021-08",
       "description": "A Thai, mobile-first content site and PWA from a life-insurance brand. I was the top committer of the 2021 build in a team of five developers.",
+      "x-print": "Thai mobile-first content PWA for a life insurer (Next.js, SWR); top committer of the 2021 build in a team of five developers. Built the site search with autocomplete and the bookmarks and browse pages.",
       "highlights": [
         "Built the site search end to end: a full-screen overlay with search history, tag autocomplete and server-rendered result pages.",
         "Built the bookmarks page with SWR, the browse pages on the headless CMS, a location-based weather greeting and a newsletter dialog that respects cookie consent."
@@ -301,6 +301,7 @@
       "startDate": "2023-06",
       "endDate": "2023-08",
       "description": "A static site from a civic-tech community that tracks a Thai political party's law drafts on their way to Parliament. I contributed 9 merged pull requests as a volunteer.",
+      "x-print": "Civic-tech site tracking a Thai party's law drafts (Nuxt, TypeScript); 9 merged pull requests as a volunteer, including the laws explorer page and loading the data at runtime.",
       "highlights": [
         "Built the laws explorer page by adapting the existing promise explorer to a new data model with topics, statuses, timelines and links.",
         "Made the static site show current data without a rebuild by loading the hourly-synced data file at runtime, and fixed Lighthouse findings in shared components."
